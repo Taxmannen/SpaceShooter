@@ -49,6 +49,7 @@ class Enemy extends ObjectSpawner {
 	void draw()
 	{
 		super.draw();
+		rectMode(CENTER);
 		rect(position.x, position.y, size, size);
 	}
 
