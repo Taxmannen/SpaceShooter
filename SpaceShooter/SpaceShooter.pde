@@ -1,6 +1,7 @@
 Player player;
 Enemy[] enemies;
 int numberOfEnemies;
+Bullet[] playerBullets;
 
 void setup()
 {
@@ -13,6 +14,11 @@ void setup()
 	{
 		enemies[i] = new Enemy();
 	}
+	playerBullets = new Bullet[5];
+	for (int i = 0; i < 5; ++i)
+	{
+		playerBullets[i] = new Bullet(new PVector(random(width), 0));
+	}
 }
 
 void draw() 
@@ -20,7 +26,15 @@ void draw()
 	background(0);
 	player.update();
 	player.draw();
-
+	for (Bullet bullet : playerBullets)
+	{
+		bullet.draw();
+		bullet.update();
+	}
+	if (EnemyToBulletCollision())
+	{
+		println(EnemyToBulletCollision());
+	}
 	for (int i = 0; i < numberOfEnemies; ++i)
 		enemies[i].update();
 	for (int i = 0; i < numberOfEnemies; ++i)
