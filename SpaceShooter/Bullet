@@ -1,0 +1,15 @@
+class Bullet extends ObjectSpawner {
+  
+	Bullet(){
+
+	}
+
+	void update(){
+		
+	}
+
+	void draw(){
+
+	}
+
+}
