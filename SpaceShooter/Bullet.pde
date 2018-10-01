@@ -1,18 +1,28 @@
-class Bullet extends ObjectSpawner {
-  
+class Bullet extends ObjectSpawner
+{
+
   //constructor
-	Bullet(){
+	public Bullet()
+	{
 
 	}
-  
+	public Bullet(PVector pos)
+	{
+		position = new PVector(pos.x, pos.y);
+		direction = new PVector(0, 1);
+		size = 10;
+	}
+
   //update function
-	void update(){
-		
+	void update()
+	{
+		position.add(direction);
 	}
-  
-  //draw-function
-	void draw(){
 
+  //draw-function
+	void draw()
+	{
+		ellipse(position.x, position.y, size, size);
 	}
 
 }
