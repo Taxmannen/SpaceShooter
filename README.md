@@ -3,13 +3,15 @@
 To do:
 
   Johan:
-  
+    
+    Class ObjectSpawner
+    
     Gamestates
     
     Class Enemies
     
   Daniel:
-  
+    
     Class Player
     
     Input
