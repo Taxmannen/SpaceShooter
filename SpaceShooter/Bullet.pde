@@ -1,6 +1,5 @@
 class Bullet extends ObjectSpawner
 {
-
   //constructor
 	public Bullet()
 	{
@@ -22,7 +21,7 @@ class Bullet extends ObjectSpawner
   //draw-function
 	void draw()
 	{
+		ellipseMode(CENTER);
 		ellipse(position.x, position.y, size, size);
 	}
-
 }
