@@ -16,6 +16,7 @@ class Player extends ObjectSpawner
 
 	void draw()
 	{
+		stroke(255);
 		line(position.x, position.y, position.x + 10, position.y + 20);
 		line(position.x, position.y, position.x - 10, position.y + 20);
 	}
