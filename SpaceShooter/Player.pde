@@ -1,15 +1,18 @@
-class Player extends ObjectSpawner {
+class Player extends ObjectSpawner 
+{
 
-	Human(){
+	public Player()
+	{
   
 	}
 
-	void update(){
+	void update()
+	{
 
 	}
 
-	void draw(){
-
+	void draw()
+	{
+		ellipse(width/2, height/2, 20, 20);
 	}
-
 }
