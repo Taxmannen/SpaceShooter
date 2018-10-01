@@ -1,16 +1,18 @@
 class Enemy extends ObjectSpawner {
   
   //constructor
-	Enemy(float newX, float newY)
+	public Enemy(float newX, float newY)
 	{
 		super(newX,newY);
 		speed = 2;
+		size = 20;
 	}
 
-	Enemy()
+	public Enemy()
 	{
 		super();
-		speed = 5;
+		speed = 2;
+		size = 20;
 	}
 
   
@@ -18,14 +20,25 @@ class Enemy extends ObjectSpawner {
 	void update()
 	{
 		super.update();
+		float magnitude = sqrt( (player.position.x - position.x) * (player.position.x - position.x) + (player.position.y - position.y) * (player.position.y - position.y) );
+		direction.x = (player.position.x - position.x) / magnitude;
+		direction.y = (player.position.y - position.y) / magnitude;
+
+		if (dist( position.x, position.y, player.position.x, player.position.y )<250)
+		{
+			direction.x *=-1;
+			direction.y *=-1;
+		}
+		
 		position.x += direction.x * speed;
 		position.y += direction.y * speed;
 
-		if (position.x > width+5 || position.x < -15)
+
+		if (position.x > width+10 || position.x < -10)
 		{
 			direction.x *= -1;
 		}
-		if (position.y > height/2 || position.y < -15)
+		if (position.y > height+10 || position.y < -10)
 		{
 			direction.y *= -1;
 		}
@@ -36,7 +49,7 @@ class Enemy extends ObjectSpawner {
 	void draw()
 	{
 		super.draw();
-		ellipse(position.x, position.y, 10, 10);
+		rect(position.x, position.y, size, size);
 	}
 
 }
