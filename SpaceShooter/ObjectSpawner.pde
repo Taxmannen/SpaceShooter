@@ -5,7 +5,7 @@ public class ObjectSpawner{
 	int size;
 
   //constructor with specified position.
-  public Spawn(float newX, float newY)
+  public ObjectSpawner(float newX, float newY)
   {
   	position = new PVector();
   	position.x = newX;
@@ -17,11 +17,11 @@ public class ObjectSpawner{
   }
 
   //constructor with unspecified position
-  public Spawn()
+  public ObjectSpawner()
   {
   	position = new PVector();
-  	position.x = 1;		//placeholder value
-  	position.y = 1;		//placeholder value
+  	position.x = random(20, width-20);		//placeholder value
+  	position.y = random(20, height/2);		//placeholder value
 
   	direction = new PVector();
   	direction.x = 1;	//placeholder value
@@ -37,7 +37,7 @@ public class ObjectSpawner{
   //code for drawing the objects on the screen
   void draw()
   {
-  	fill(c);
+
   }
 
 }
