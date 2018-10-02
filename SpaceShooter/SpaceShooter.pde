@@ -3,11 +3,13 @@ int numberOfEnemies;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+PImage bg;
 
 void setup()
 {
 	size(1600, 900);
 	frameRate(60);
+	bg = loadImage("Background/BG.jpg");
 	player = new Player();
 	numberOfEnemies = 5;
 	for (int i = 0; i < numberOfEnemies; ++i)
@@ -20,14 +22,13 @@ void setup()
 		{
 			enemies.add(new EnemyFast());
 		}
-		else
-			enemies.add(new EnemyStandard());
+		else enemies.add(new EnemyStandard());
 	}
 }
 
 void draw() 
 {
-	background(0);
+	background(bg);
 	Objects();
 	if(spaceBar)
 	{
