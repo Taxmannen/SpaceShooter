@@ -55,21 +55,11 @@ void draw()
 			enemyBullets.remove(i);
 		}
 	}
-	for (EnemyTank tank : enemies)
-	{
-		tank.update();
-	}
-	for (EnemyStandard enemy : enemies)
+	for (int i = 0; i < numberOfEnemies; ++i)
 	{
 		if(frameCount%120 == 0)
-			enemy.fireBullet(enemyBullets);
-		enemy.update();
-	}
-	for (EnemyFast enemy : enemies)
-	{
-		if(frameCount%120 == 0)
-			enemy.fireBullet(enemyBullets);
-		enemy.update();
+			enemies[i].fireBullet(enemyBullets);
+		enemies[i].update();
 	}
 	for (int i = 0; i < numberOfEnemies; ++i)
 		enemies[i].draw();
