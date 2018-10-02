@@ -44,7 +44,8 @@ void draw()
 	}
 	for (int i = 0; i < numberOfEnemies; ++i)
 	{
-		enemies[i].fireBullet(enemyBullets);
+		if(frameCount%120 == 0)
+			enemies[i].fireBullet(enemyBullets);
 		enemies[i].update();
 	}
 	for (int i = 0; i < numberOfEnemies; ++i)
