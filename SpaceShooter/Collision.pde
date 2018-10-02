@@ -2,15 +2,13 @@ boolean PlayerToBulletCollision()
 {
 	for (Bullet bullet : enemyBullets)
 	{
-		if((bullet.position.x - bullet.size/2 < player.position.x + player.size/2 && bullet.position.x - bullet.size/2 > player.position.x - player.size/2) || 
-				(bullet.position.x + bullet.size/2 < player.position.x + player.size/2 && bullet.position.x + bullet.size/2 > player.position.x - player.size/2))
+		if(player.position.x < bullet.position.x + bullet.size/2 && player.position.x > bullet.position.x - bullet.size/2)
+		{
+			if(player.position.y < bullet.position.y + bullet.size/2 && player.position.y > bullet.position.y - bullet.size/2)
 			{
-				if((bullet.position.y - bullet.size/2 < player.position.y + player.size/2 && bullet.position.y - bullet.size/2 > player.position.y - player.size/2) || 
-					(bullet.position.y + bullet.size/2 < player.position.y + player.size/2 && bullet.position.y + bullet.size/2 > player.position.y - player.size/2))
-				{
-					return true;
-				}
+				return true;
 			}
+		}
 	}
 	return false;
 }
