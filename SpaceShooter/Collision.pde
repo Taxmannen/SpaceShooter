@@ -12,22 +12,24 @@ boolean PlayerToBulletCollision()
 	}
 	return false;
 }
-boolean EnemyToBulletCollision()
+void EnemyToBulletCollision()
 {
-	for (Enemy enemy : enemies)
+	for (int i = 0; i < enemies.size(); i++)
 	{
-		for (Bullet bullet : playerBullets)
+		Enemy enemy = enemies.get(i);
+		for (int j = 0; j < playerBullets.size(); j++)
 		{
+			Bullet bullet = playerBullets.get(j);
 			if((bullet.position.x - bullet.size/2 < enemy.position.x + enemy.size/2 && bullet.position.x - bullet.size/2 > enemy.position.x - enemy.size/2) || 
 				(bullet.position.x + bullet.size/2 < enemy.position.x + enemy.size/2 && bullet.position.x + bullet.size/2 > enemy.position.x - enemy.size/2))
 			{
 				if((bullet.position.y - bullet.size/2 < enemy.position.y + enemy.size/2 && bullet.position.y - bullet.size/2 > enemy.position.y - enemy.size/2) || 
 					(bullet.position.y + bullet.size/2 < enemy.position.y + enemy.size/2 && bullet.position.y + bullet.size/2 > enemy.position.y - enemy.size/2))
 				{
-					return true;
+					playerBullets.remove(j);
+					enemies.remove(i);
 				}
 			}
 		}
 	}
-	return false;
 }

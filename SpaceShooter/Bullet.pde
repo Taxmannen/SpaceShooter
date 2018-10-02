@@ -4,18 +4,15 @@ class Bullet extends ObjectSpawner
  	//constructor
 	public Bullet()
 	{
-		position = new PVector(-20, -20);
-		direction = new PVector(0, 0);
-		size = 0;
-		colour = 0;
+		
 	}
-	public Bullet(PVector pos, PVector dir, int bulletColour)
+	public Bullet(PVector pos, PVector dir, int bulletColour, float speed)
 	{
 		position = new PVector(pos.x, pos.y);
-		//temp direction
 		direction = new PVector(dir.x, dir.y);
 		size = 10;
 		colour = bulletColour;
+		direction.mult(speed);
 	}
 
   	//update function
