@@ -1,7 +1,7 @@
 public class ObjectSpawner{
 	PVector position;
 	PVector direction;
-	int speed;
+	float speed;
 	int size;
 
   //constructor with specified position.
