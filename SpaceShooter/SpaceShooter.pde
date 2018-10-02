@@ -6,7 +6,7 @@ ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 
 void setup()
 {
-	size(800, 600);
+	size(1600, 900);
 	frameRate(60);
 	player = new Player();
 	numberOfEnemies = 5;
