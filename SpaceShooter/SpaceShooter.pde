@@ -13,7 +13,16 @@ void setup()
 	enemies = new Enemy[numberOfEnemies];
 	for (int i = 0; i < numberOfEnemies; ++i)
 	{
-		enemies[i] = new Enemy();
+		if (i == 0)
+		{
+			enemies[i] = new EnemyTank();
+		}
+		else if (i == 1)
+		{
+			enemies[i] = new EnemyFast();
+		}
+		else
+		enemies[i] = new EnemyStandard();
 	}
 }
 
