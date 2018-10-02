@@ -13,20 +13,20 @@ public class ObjectSpawner{
   	position.y = newY;
 
   	direction = new PVector();
-  	direction.x = 1;	//placeholder value
-  	direction.y = 1;	//placeholder value
+  	direction.x = 1;
+  	direction.y = 1;
   }
 
   //constructor with unspecified position
   public ObjectSpawner()
   {
   	position = new PVector();
-  	position.x = random(20, width-20);		//placeholder value
-  	position.y = random(20, height/2);		//placeholder value
+  	position.x = random(20, width-20);
+  	position.y = random(20, height/2);
 
   	direction = new PVector();
-  	direction.x = 1;	//placeholder value
-  	direction.y = 1;	//placeholder value
+  	direction.x = 1;
+  	direction.y = 1;
   }
   
   //code for the objects' update values

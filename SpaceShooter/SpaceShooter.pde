@@ -21,7 +21,7 @@ void setup()
 			enemies.add(new EnemyFast());
 		}
 		else
-		enemies.add(new EnemyStandard());
+			enemies.add(new EnemyStandard());
 	}
 }
 
