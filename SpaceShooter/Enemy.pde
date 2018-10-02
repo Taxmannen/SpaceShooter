@@ -25,11 +25,11 @@ class Enemy extends ObjectSpawner {
 		direction.x = (player.position.x - position.x) / magnitude;
 		direction.y = (player.position.y - position.y) / magnitude;
 
-		if (dist( position.x, position.y, player.position.x, player.position.y )<250)
+		if (dist( position.x, position.y, player.position.x, player.position.y )<300)
 		{
 			if (speed > -2)
 			{
-				speed -= 0.06;
+				speed -= 0.04;
 			}
 		}
 		else
