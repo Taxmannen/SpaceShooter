@@ -26,6 +26,7 @@ void EnemyToBulletCollision()
 				if((bullet.position.y - bullet.size/2 < enemy.position.y + enemy.size/2 && bullet.position.y - bullet.size/2 > enemy.position.y - enemy.size/2) || 
 					(bullet.position.y + bullet.size/2 < enemy.position.y + enemy.size/2 && bullet.position.y + bullet.size/2 > enemy.position.y - enemy.size/2))
 				{
+					//Temporary solution
 					playerBullets.remove(j);
 					enemies.remove(i);
 				}
