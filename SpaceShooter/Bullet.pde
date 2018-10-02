@@ -9,11 +9,11 @@ class Bullet extends ObjectSpawner
 		size = 0;
 		colour = 0;
 	}
-	public Bullet(PVector pos, int bulletColour)
+	public Bullet(PVector pos, PVector dir, int bulletColour)
 	{
 		position = new PVector(pos.x, pos.y);
 		//temp direction
-		direction = new PVector(0, 1);
+		direction = new PVector(dir.x, dir.y);
 		size = 10;
 		colour = bulletColour;
 	}

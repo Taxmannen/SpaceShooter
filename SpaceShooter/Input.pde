@@ -65,8 +65,8 @@ float getAxisRaw(String axis)
 	}
 	return 0;
 }
-void fireBullet()
+void firePlayerBullet()
 {
 	spaceBar = false;
-	playerBullets.add(new Bullet(player.position, 255));
+	playerBullets.add(new Bullet(player.position, player.direction, 255));
 }

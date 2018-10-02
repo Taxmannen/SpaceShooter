@@ -65,4 +65,10 @@ class Enemy extends ObjectSpawner {
 		rect(position.x, position.y, size, size);
 	}
 
+	//Attack function
+	void fireBullet(ArrayList<Bullet> bulletList)
+	{
+		bulletList.add(new Bullet(position, direction, 128));
+	}
+
 }
