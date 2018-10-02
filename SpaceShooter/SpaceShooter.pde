@@ -30,6 +30,10 @@ void draw()
 {
 	background(0);
 	player.update();
+	if(PlayerToBulletCollision())
+	{
+		player = new Player();
+	}
 	player.draw();
 	for (int i = 0; i < playerBullets.size(); i++)
 	{
@@ -51,11 +55,21 @@ void draw()
 			enemyBullets.remove(i);
 		}
 	}
-	for (int i = 0; i < numberOfEnemies; ++i)
+	for (EnemyTank tank : enemies)
+	{
+		tank.update();
+	}
+	for (EnemyStandard enemy : enemies)
 	{
 		if(frameCount%120 == 0)
-			enemies[i].fireBullet(enemyBullets);
-		enemies[i].update();
+			enemy.fireBullet(enemyBullets);
+		enemy.update();
+	}
+	for (EnemyFast enemy : enemies)
+	{
+		if(frameCount%120 == 0)
+			enemy.fireBullet(enemyBullets);
+		enemy.update();
 	}
 	for (int i = 0; i < numberOfEnemies; ++i)
 		enemies[i].draw();
