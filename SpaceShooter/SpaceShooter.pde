@@ -1,8 +1,8 @@
 Player player;
-Enemy[] enemies;
 int numberOfEnemies;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
+ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
 void setup()
 {
@@ -10,19 +10,18 @@ void setup()
 	frameRate(60);
 	player = new Player();
 	numberOfEnemies = 5;
-	enemies = new Enemy[numberOfEnemies];
 	for (int i = 0; i < numberOfEnemies; ++i)
 	{
 		if (i == 0)
 		{
-			enemies[i] = new EnemyTank();
+			enemies.add(new EnemyTank());
 		}
 		else if (i == 1)
 		{
-			enemies[i] = new EnemyFast();
+			enemies.add(new EnemyFast());
 		}
 		else
-		enemies[i] = new EnemyStandard();
+		enemies.add(new EnemyStandard());
 	}
 }
 
@@ -55,17 +54,22 @@ void draw()
 			enemyBullets.remove(i);
 		}
 	}
-	for (int i = 0; i < numberOfEnemies; ++i)
+	for (int i = 0; i < enemies.size(); ++i)
 	{
+		Enemy enemy = enemies.get(i);
 		if(frameCount%120 == 0)
-			enemies[i].fireBullet(enemyBullets);
-		enemies[i].update();
+			enemy.fireBullet(enemyBullets);
+		enemy.update();
 	}
-	for (int i = 0; i < numberOfEnemies; ++i)
-		enemies[i].draw();
+	for (int i = 0; i < enemies.size(); ++i)
+	{
+		Enemy enemy = enemies.get(i);
+		enemy.draw();
+	}
 	if(spaceBar)
 	{
 		firePlayerBullet();
 	}
+	EnemyToBulletCollision();
 
 }
