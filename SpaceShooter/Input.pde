@@ -68,5 +68,8 @@ float getAxisRaw(String axis)
 void firePlayerBullet()
 {
 	spaceBar = false;
-	playerBullets.add(new Bullet(player.position, player.direction, 255));
+	PVector dir = new PVector(sin(radians(player.rotation)) * player.speed, cos(radians(player.rotation)) * -player.speed);
+	dir.normalize();
+	dir.multw(3);
+	playerBullets.add(new Bullet(player.position, dir, 255));
 }
