@@ -28,44 +28,7 @@ void setup()
 void draw() 
 {
 	background(0);
-	player.update();
-	if(PlayerToBulletCollision())
-	{
-		player = new Player();
-	}
-	player.draw();
-	for (int i = 0; i < playerBullets.size(); i++)
-	{
-		Bullet bullet = playerBullets.get(i);
-		bullet.draw();
-		bullet.update();
-		if(bullet.outOfBounds())
-		{
-			playerBullets.remove(i);
-		}
-	}
-	for (int i = 0; i < enemyBullets.size(); i++)
-	{
-		Bullet bullet = enemyBullets.get(i);
-		bullet.draw();
-		bullet.update();
-		if(bullet.outOfBounds())
-		{
-			enemyBullets.remove(i);
-		}
-	}
-	for (int i = 0; i < enemies.size(); ++i)
-	{
-		Enemy enemy = enemies.get(i);
-		if(frameCount%120 == 0)
-			enemy.fireBullet(enemyBullets);
-		enemy.update();
-	}
-	for (int i = 0; i < enemies.size(); ++i)
-	{
-		Enemy enemy = enemies.get(i);
-		enemy.draw();
-	}
+	Objects();
 	if(spaceBar)
 	{
 		firePlayerBullet();
