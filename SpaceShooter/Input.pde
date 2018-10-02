@@ -70,6 +70,6 @@ void firePlayerBullet()
 	spaceBar = false;
 	PVector dir = new PVector(sin(radians(player.rotation)) * player.speed, cos(radians(player.rotation)) * -player.speed);
 	dir.normalize();
-	dir.multw(3);
+	dir.mult(3);
 	playerBullets.add(new Bullet(player.position, dir, 255));
 }
