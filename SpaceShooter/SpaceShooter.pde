@@ -30,10 +30,6 @@ void draw()
 {
 	background(0);
 	player.update();
-	if(PlayerToBulletCollision())
-	{
-		player = new Player();
-	}
 	player.draw();
 	for (int i = 0; i < playerBullets.size(); i++)
 	{
