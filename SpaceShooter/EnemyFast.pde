@@ -6,6 +6,7 @@ class EnemyFast extends Enemy
 	{
 		super(newX,newY);
 		speed = 3;
+		hp = 1;
 		size = 10;
 	}
 
@@ -13,6 +14,7 @@ class EnemyFast extends Enemy
 	{
 		super();
 		speed = 3;
+		hp = 1;
 		size = 10;
 	}
 
@@ -42,15 +44,11 @@ class EnemyFast extends Enemy
   //draw function
 	void draw()
 	{
+		fill(255, 0, 0);
+		stroke(255, 0, 0);
 		super.draw();
-		stroke(255);
+		
 		rect(position.x, position.y, size, size/2);
-	}
-
-	//Attack function
-	void fireBullet(ArrayList<Bullet> bulletList)
-	{
-		bulletList.add(new Bullet(position, direction, 128));
 	}
 
 }

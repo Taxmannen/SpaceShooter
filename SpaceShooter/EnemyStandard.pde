@@ -6,6 +6,7 @@ class EnemyStandard extends Enemy
 	{
 		super(newX,newY);
 		speed = 2;
+		hp = 3;
 		size = 20;
 	}
 
@@ -13,6 +14,7 @@ class EnemyStandard extends Enemy
 	{
 		super();
 		speed = 2;
+		hp = 3;
 		size = 20;
 	}
 
@@ -42,15 +44,11 @@ class EnemyStandard extends Enemy
   //draw function
 	void draw()
 	{
+		fill(155, 205, 0);
+		stroke(155, 205, 0);
 		super.draw();
-		stroke(255);
+		
 		rect(position.x, position.y, size, size);
-	}
-
-	//Attack function
-	void fireBullet(ArrayList<Bullet> bulletList)
-	{
-		bulletList.add(new Bullet(position, direction, 128));
 	}
 
 }

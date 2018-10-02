@@ -3,6 +3,7 @@ public class ObjectSpawner{
 	PVector direction;
 	float speed;
 	int size;
+  int hp;
 
   //constructor with specified position.
   public ObjectSpawner(float newX, float newY)

@@ -6,12 +6,14 @@ class EnemyTank extends Enemy
 	{
 		super(newX,newY);
 		speed = 1;
+		hp = 10;
 		size = 30;
 	}
 	public EnemyTank()
 	{
 		super();
 		speed = 1;
+		hp = 10;
 		size = 30;
 	}
 
@@ -36,6 +38,8 @@ class EnemyTank extends Enemy
 
 	void draw()
 	{
+		fill(155, 100, 50);
+		stroke(155, 100, 50);
 		super.draw();
 		ellipse(position.x, position.y, size, size);
 	}
