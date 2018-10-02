@@ -1,8 +1,8 @@
 Player player;
 Enemy[] enemies;
 int numberOfEnemies;
-Bullet[] playerBullets;
 Bullet[] enemyBullets;
+ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 
 void setup()
 {
@@ -20,11 +20,6 @@ void setup()
 	{
 		enemyBullets[i] = new Bullet(new PVector(random(width), 0), 128);
 	}
-	playerBullets = new Bullet[5];
-	for (int i = 0; i < 5; ++i)
-	{
-		playerBullets[i] = new Bullet(new PVector(random(width), 0), 255);
-	}
 }
 
 void draw() 
@@ -32,28 +27,28 @@ void draw()
 	background(0);
 	player.update();
 	player.draw();
-	for (Bullet bullet : playerBullets)
+	for (int i = 0; i < playerBullets.size(); i++)
 	{
+		Bullet bullet = playerBullets.get(i);
 		bullet.draw();
 		bullet.update();
+		if(bullet.outOfBounds())
+		{
+			playerBullets.remove(i);
+		}
 	}
 	for (Bullet bullet : enemyBullets)
 	{
 		bullet.draw();
 		bullet.update();
 	}
-	if (PlayerToBulletCollision())
-	{
-		println(PlayerToBulletCollision());
-	}
-	if (EnemyToBulletCollision())
-	{
-		println(EnemyToBulletCollision());
-	}
 	for (int i = 0; i < numberOfEnemies; ++i)
 		enemies[i].update();
 	for (int i = 0; i < numberOfEnemies; ++i)
 		enemies[i].draw();
-
+	if(spaceBar)
+	{
+		fireBullet();
+	}
 
 }

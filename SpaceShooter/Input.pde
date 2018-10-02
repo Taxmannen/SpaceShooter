@@ -2,7 +2,7 @@ boolean moveLeft;
 boolean moveRight;
 boolean moveUp;
 boolean moveDown;
-
+boolean spaceBar;
 void keyPressed() 
 {
 	if (key == CODED) 
@@ -18,6 +18,10 @@ void keyPressed()
 		else if (key == 'd') moveRight = true;
 		else if (key == 'w') moveUp = true;
 		else if (key == 's') moveDown = true;
+	}
+	if(keyCode == 32)
+	{
+		spaceBar = true;
 	}
 
 }
@@ -38,6 +42,10 @@ void keyReleased()
 		else if (key == 'w') moveUp = false;
 		else if (key == 's') moveDown = false;
 	}
+	if(keyCode == 32)
+	{
+		spaceBar = false;
+	}
 }
 
 float getAxisRaw(String axis) 
@@ -56,4 +64,9 @@ float getAxisRaw(String axis)
 		if (moveDown) return 1;
 	}
 	return 0;
+}
+void fireBullet()
+{
+	spaceBar = false;
+	playerBullets.add(new Bullet(player.position, 255));
 }
