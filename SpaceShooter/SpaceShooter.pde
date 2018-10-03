@@ -14,6 +14,7 @@ void setup()
 	size(1600, 900);
 	frameRate(60);
 	reset();
+	gameState = 0;
 }
 
 void draw() 
