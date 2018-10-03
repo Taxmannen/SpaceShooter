@@ -12,6 +12,15 @@ class Health extends PowerUps
 		size = 20;
 	}
 
+	void update()
+	{
+		if (pickedUp)
+		{
+			powerUp = new PowerUps();
+			player.health += 2;
+		}
+	}
+
 	void draw()
 	{
 		super.draw();

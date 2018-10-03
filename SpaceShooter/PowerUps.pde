@@ -1,5 +1,7 @@
 class PowerUps extends ObjectSpawner
 {
+	boolean pickedUp = false;
+
 	//constructors
 	public PowerUps(float x, float y)
 	{
@@ -9,6 +11,10 @@ class PowerUps extends ObjectSpawner
 	public PowerUps()
 	{
 		super();
+	}
+
+	void update()
+	{
 	}
 
 	void draw()

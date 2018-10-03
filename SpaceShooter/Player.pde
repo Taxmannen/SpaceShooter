@@ -5,9 +5,9 @@ class Player extends ObjectSpawner
 		
 	PImage img;
 	float angle;
-	float rotationSpeed = 7.5;
-	float maxSpeed = 10;
-	float maxHealth = 10;
+	float rotationSpeed = 4.5;
+	float maxSpeed = 5;
+	int maxHealth = 10;
 
 	public Player()
 	{
@@ -22,6 +22,10 @@ class Player extends ObjectSpawner
 
 	void update()
 	{
+		if (health > maxHealth)
+		{
+			health = maxHealth;
+		}
 		angle += getAxisRaw("Horizontal") * rotationSpeed;
 		
 		if      (angle > 360) angle = 0;

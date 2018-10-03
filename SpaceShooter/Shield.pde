@@ -12,6 +12,17 @@ class Shield extends PowerUps
 		size = 25;
 	}
 
+	void update()
+	{
+		super.update();
+		if (pickedUp)
+		{
+			size = 80;
+			position.x = player.position.x;
+			position.y = player.position.y;
+		}
+	}
+
 	void draw()
 	{
 		super.draw();
@@ -22,3 +33,5 @@ class Shield extends PowerUps
 	}
 
 }
+
+

@@ -16,11 +16,11 @@ void Objects()
 	{
 		if(PowerUpCollision())
 		{
-			println("PowerUp taken.");
-			powerUp = new PowerUps();
+			powerUp.pickedUp = true;
 		}
 	}
 	player.draw();
+	powerUp.update();
 	powerUp.draw();
 	for (int i = 0; i < playerBullets.size(); i++)
 	{
@@ -63,7 +63,7 @@ void GeneratePowerUp(PVector enemyPos)
 {
 	//10% chans för powerup på en kill.
 	int rand = (int)random(1, 101);
-	if (rand <= 10)
+	if (rand <= 100)
 	{
 		//randomiserar vilken powerup man får.
 		rand = (int)random(1, 3);
