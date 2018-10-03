@@ -45,6 +45,7 @@ void keyReleased()
 	if(keyCode == 32)
 	{
 		spaceBar = false;
+		once = true;
 	}
 }
 
@@ -68,6 +69,7 @@ float getAxisRaw(String axis)
 void firePlayerBullet()
 {
 	spaceBar = false;
+	once = false;
 	PVector dir = new PVector(sin(radians(player.angle)) * player.maxSpeed, cos(radians(player.angle)) * -player.maxSpeed);
 	dir.normalize();
 	dir.mult(3);

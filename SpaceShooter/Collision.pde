@@ -3,9 +3,9 @@ boolean PlayerToBulletCollision()
 	for (int i = 0; i < enemyBullets.size(); i++)
 	{
 		Bullet bullet = enemyBullets.get(i);
-		if(player.position.x < bullet.position.x + bullet.size/2 && player.position.x > bullet.position.x - bullet.size/2)
+		if(player.position.x - 10 < bullet.position.x + bullet.size/2 && player.position.x + 10 > bullet.position.x - bullet.size/2)
 		{
-			if(player.position.y < bullet.position.y + bullet.size/2 && player.position.y > bullet.position.y - bullet.size/2)
+			if(player.position.y - 10 < bullet.position.y + bullet.size/2 && player.position.y + 10 > bullet.position.y - bullet.size/2)
 			{
 				enemyBullets.remove(i);
 				return true;
@@ -38,6 +38,19 @@ void EnemyToBulletCollision()
 				}
 			}
 		}
-
 	}
+}
+boolean PlayerToEnemyCollision()
+{
+	for (Enemy enemy : enemies) 
+	{
+		if(player.position.x - 10 < enemy.position.x + enemy.size/2 && player.position.x + 10 > enemy.position.x - enemy.size/2)
+		{
+			if(player.position.y - 10 < enemy.position.y + enemy.size/2 && player.position.y + 10 > enemy.position.y - enemy.size/2)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
 }

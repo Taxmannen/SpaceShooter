@@ -2,21 +2,22 @@ class Player extends ObjectSpawner
 {
 	public int health;
 	public int score;
-	
+		
 	PImage img;
 	float angle;
 	float rotationSpeed = 7.5;
 	float maxSpeed = 10;
+	float maxHealth = 10;
 
 	public Player()
 	{
   		super();
+  		img = loadImage("Assets/Ship.png");
   		strokeWeight(2);
   		position.x = width/2;
   		position.y = height/2;
   		health = 10;
   		score = 0;
-  		img = loadImage("Assets/Ship.png");
 	}
 
 	void update()

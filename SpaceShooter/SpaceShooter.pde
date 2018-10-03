@@ -5,7 +5,8 @@ int numberOfEnemies;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-PImage bg;
+Background bg; 
+boolean once;
 
 void setup()
 {
@@ -19,9 +20,10 @@ void draw()
 	currentGameState(gameState);
 	if (gameState == 2)
 	{
-		background(bg);
+		bg.draw();
 		Objects();
-		if (spaceBar) firePlayerBullet();
+		if (spaceBar && once) firePlayerBullet();
 		EnemyToBulletCollision();
+		ui.draw();
 	}
 }

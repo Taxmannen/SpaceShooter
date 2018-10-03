@@ -35,9 +35,9 @@ void currentGameState(int gs)
 void reset()
 {
 	gameState = 0;
-	bg = loadImage("Assets/Background.jpg");
-	player = new Player();
+	bg = new Background();
 	ui = new Ui();
+	player = new Player();
 	numberOfEnemies = 5;
 	for (int i = 0; i < numberOfEnemies; ++i)
 	{
