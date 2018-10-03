@@ -28,6 +28,11 @@ void Objects()
 			enemyBullets.remove(i);
 		}
 	}
+	if(PlayerToEnemyCollision())
+	{
+		player.health -= 1;
+		if (player.health == 0) gameState = 1;
+	}
 	for (int i = 0; i < enemies.size(); ++i)
 	{
 		Enemy enemy = enemies.get(i);
