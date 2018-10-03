@@ -13,8 +13,6 @@ public class ObjectSpawner{
   	position.y = newY;
 
   	direction = new PVector();
-  	direction.x = 1;
-  	direction.y = 1;
   }
 
   //constructor with unspecified position
@@ -25,8 +23,6 @@ public class ObjectSpawner{
   	position.y = random(20, height/2);
 
   	direction = new PVector();
-  	direction.x = 1;
-  	direction.y = 1;
   }
   
   //code for the objects' update values
