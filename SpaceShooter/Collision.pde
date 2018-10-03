@@ -54,9 +54,23 @@ boolean PlayerToEnemyCollision()
 		{
 			if(player.position.y - 10 < enemy.position.y + enemy.size/2 && player.position.y + 10 > enemy.position.y - enemy.size/2)
 			{
+				Positioning(enemy);
 				return true;
 			}
 		}
 	}
 	return false;
+}
+void Positioning(Enemy enemy)
+{
+	float x = player.position.x - enemy.position.x;
+	float y = player.position.y - enemy.position.y;
+	if(abs(x) > abs(y))
+	{
+		player.position.x = enemy.position.x + (enemy.size/2 + 10) * (x/abs(x));
+	}
+	else
+	{
+		player.position.y = enemy.position.y + (enemy.size/2 + 10) * (y/abs(y));
+	}
 }
