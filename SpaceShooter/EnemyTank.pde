@@ -20,7 +20,7 @@ class EnemyTank extends Enemy
 	void update()
 	{
 		super.update();
-		if (dist( position.x, position.y, player.position.x, player.position.y )<5)
+		if (dist( position.x, position.y, player.position.x, player.position.y )<25)
 		{
 			if (speed > -2)
 			{

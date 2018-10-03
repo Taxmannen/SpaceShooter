@@ -44,8 +44,8 @@ class EnemyStandard extends Enemy
   //draw function
   void draw()
   {
-  	fill(155, 205, 0);
-  	stroke(155, 205, 0);
+  	fill(0, 100, 255);
+  	stroke(0, 100, 255);
   	super.draw();
   	
   	rect(position.x, position.y, size, size);
