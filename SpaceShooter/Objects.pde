@@ -8,6 +8,7 @@ void Objects()
 		//Remove bullet on collision
 	}
 	player.draw();
+	powerUp.draw();
 	for (int i = 0; i < playerBullets.size(); i++)
 	{
 		Bullet bullet = playerBullets.get(i);
@@ -18,6 +19,7 @@ void Objects()
 			playerBullets.remove(i);
 		}
 	}
+
 	for (int i = 0; i < enemyBullets.size(); i++)
 	{
 		Bullet bullet = enemyBullets.get(i);
@@ -28,6 +30,7 @@ void Objects()
 			enemyBullets.remove(i);
 		}
 	}
+
 	for (int i = 0; i < enemies.size(); ++i)
 	{
 		Enemy enemy = enemies.get(i);
@@ -35,6 +38,7 @@ void Objects()
 			enemy.fireBullet(enemyBullets);
 		enemy.update();
 	}
+
 	for (int i = 0; i < enemies.size(); ++i)
 	{
 		Enemy enemy = enemies.get(i);
