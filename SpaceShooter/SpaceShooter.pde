@@ -18,15 +18,7 @@ void draw()
 {
 	background(bg);
 	Objects();
-
-	//FLYTTAS
-	ui.update();
-	ui.draw();
-
-	if(spaceBar)
-	{
-		firePlayerBullet();
-	}
+	if (spaceBar) firePlayerBullet();
 	EnemyToBulletCollision();
 
 }

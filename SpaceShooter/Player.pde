@@ -1,5 +1,8 @@
 class Player extends ObjectSpawner 
 {
+	public int health;
+	public int score;
+	
 	float angle;
 	float rotationSpeed = 7.5;
 
@@ -9,6 +12,8 @@ class Player extends ObjectSpawner
   		strokeWeight(2);
   		position.x = width/2;
   		position.y = height/2;
+  		health = 10;
+  		score = 0;
 	}
 
 	void update()

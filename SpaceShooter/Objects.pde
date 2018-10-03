@@ -1,9 +1,10 @@
 void Objects()
 {
 	player.update();
-	if(PlayerToBulletCollision())
+	if (PlayerToBulletCollision())
 	{
-		player = new Player();
+		player.health -= 1;
+		if (player.health == 0) gameState = 1;
 	}
 	player.draw();
 	for (int i = 0; i < playerBullets.size(); i++)
@@ -38,4 +39,5 @@ void Objects()
 		Enemy enemy = enemies.get(i);
 		enemy.draw();
 	}
+	ui.draw();
 }
