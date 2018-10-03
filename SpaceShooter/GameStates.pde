@@ -6,8 +6,8 @@ void currentGameState(int gs)
 		background(0);
 		textSize(50);
     	textAlign(CENTER);
-		text("Menu.\nPress Space to start.", width/2, height/3);
-		if (spaceBar)
+		text("Menu.\nPress S to start.", width/2, height/3);
+		if (moveDown)
 		{
 			gameState = 2;
 		}
@@ -19,8 +19,8 @@ void currentGameState(int gs)
 		background(0);
 		textSize(50);
 		textAlign(CENTER);
-		text("Game Over.\nPress Space to reset.", width/2, height/3);
-		if (spaceBar)
+		text("Game Over.\nPress S to restart.", width/2, height/3);
+		if (moveDown)
 		{
 			playerBullets.clear();
 			enemyBullets.clear();
