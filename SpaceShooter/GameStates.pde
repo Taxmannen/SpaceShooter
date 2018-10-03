@@ -1,16 +1,6 @@
 void currentGameState(int gs)
 {
-	switch (gs)
-	{
-		case 0 :
-			
-		break;
-
-
-	}
-
-
-
+	//Menu screen
 	if (gameState == 0)
 	{
 		background(0);
@@ -22,6 +12,7 @@ void currentGameState(int gs)
 		}
 	}
 
+	//Game Over screen.
 	if (gameState == 1)
 	{
 		background(0);
@@ -29,7 +20,6 @@ void currentGameState(int gs)
 		text("Game Over. Space to reset.", width/2, height/2);
 		if (spaceBar)
 		{
-			gameState = 0;
 			playerBullets.clear();
 			enemyBullets.clear();
 			enemies.clear();
@@ -42,10 +32,10 @@ void currentGameState(int gs)
 
 void reset()
 {
+	gameState = 0;
 	bg = loadImage("Assets/Background.jpg");
 	player = new Player();
 	ui = new Ui();
-	gameState = 0;
 	numberOfEnemies = 5;
 	for (int i = 0; i < numberOfEnemies; ++i)
 	{

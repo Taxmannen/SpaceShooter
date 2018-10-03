@@ -16,9 +16,12 @@ void setup()
 
 void draw() 
 {
-	background(bg);
-	Objects();
-	if (spaceBar) firePlayerBullet();
-	EnemyToBulletCollision();
-
+	currentGameState(gameState);
+	if (gameState == 2)
+	{
+		background(bg);
+		Objects();
+		if (spaceBar) firePlayerBullet();
+		EnemyToBulletCollision();
+	}
 }
