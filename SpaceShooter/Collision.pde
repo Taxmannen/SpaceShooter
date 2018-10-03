@@ -1,11 +1,13 @@
 boolean PlayerToBulletCollision()
 {
-	for (Bullet bullet : enemyBullets)
+	for (int i = 0; i < enemyBullets.size(); i++)
 	{
+		Bullet bullet = enemyBullets.get(i);
 		if(player.position.x < bullet.position.x + bullet.size/2 && player.position.x > bullet.position.x - bullet.size/2)
 		{
 			if(player.position.y < bullet.position.y + bullet.size/2 && player.position.y > bullet.position.y - bullet.size/2)
 			{
+				enemyBullets.remove(i);
 				return true;
 			}
 		}
@@ -26,12 +28,16 @@ void EnemyToBulletCollision()
 				if((bullet.position.y - bullet.size/2 < enemy.position.y + enemy.size/2 && bullet.position.y - bullet.size/2 > enemy.position.y - enemy.size/2) || 
 					(bullet.position.y + bullet.size/2 < enemy.position.y + enemy.size/2 && bullet.position.y + bullet.size/2 > enemy.position.y - enemy.size/2))
 				{
-					//Temporary solution
 					playerBullets.remove(j);
-					enemies.remove(i);
-					//Add player.score on enemy remove
+					enemy.hp -= 1;
+					if(enemy.hp == 0)
+					{
+						enemies.remove(i);
+						player.score += 1;
+					}
 				}
 			}
 		}
+
 	}
 }
