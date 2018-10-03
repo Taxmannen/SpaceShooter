@@ -2,6 +2,7 @@ Player player;
 Ui ui;
 int gameState;
 int numberOfEnemies;
+PowerUps powerUp = new Shield(-20, -20);
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();

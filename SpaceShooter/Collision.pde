@@ -32,6 +32,7 @@ void EnemyToBulletCollision()
 					enemy.hp -= 1;
 					if(enemy.hp == 0)
 					{
+						powerUp = new Shield( enemy.position.x, enemy.position.y );
 						enemies.remove(i);
 						player.score += 1;
 					}
