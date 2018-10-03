@@ -2,11 +2,12 @@ class Player extends ObjectSpawner
 {
 	public int health;
 	public int score;
-	
+		
 	PImage img;
 	float angle;
 	float rotationSpeed = 7.5;
 	float maxSpeed = 10;
+	float maxHealth = 10;
 
 	public Player()
 	{

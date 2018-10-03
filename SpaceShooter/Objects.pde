@@ -1,6 +1,5 @@
 void Objects()
 {
-	bg.draw();
 	player.update();
 	if (PlayerToBulletCollision())
 	{
@@ -41,5 +40,4 @@ void Objects()
 		Enemy enemy = enemies.get(i);
 		enemy.draw();
 	}
-	ui.draw();
 }

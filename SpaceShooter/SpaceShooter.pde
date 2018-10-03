@@ -12,7 +12,6 @@ void setup()
 	size(1600, 900);
 	frameRate(60);
 	reset();
-	bg = new Background();
 }
 
 void draw() 
@@ -20,8 +19,10 @@ void draw()
 	currentGameState(gameState);
 	if (gameState == 2)
 	{
-		Objects();
+		bg.draw();
+		Objects();ui.draw();
 		if (spaceBar) firePlayerBullet();
 		EnemyToBulletCollision();
+		ui.draw();
 	}
 }
