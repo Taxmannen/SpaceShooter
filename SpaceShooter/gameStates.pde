@@ -1,4 +1,0 @@
-void currentGameState(int gs)
-{
-	
-}
