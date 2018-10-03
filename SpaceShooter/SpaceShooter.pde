@@ -6,6 +6,7 @@ ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 Background bg; 
+boolean once;
 
 void setup()
 {
@@ -21,7 +22,7 @@ void draw()
 	{
 		bg.draw();
 		Objects();
-		if (spaceBar) firePlayerBullet();
+		if (spaceBar && once) firePlayerBullet();
 		EnemyToBulletCollision();
 		ui.draw();
 	}
