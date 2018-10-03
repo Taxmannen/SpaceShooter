@@ -1,5 +1,7 @@
 class Ui 
 {
+	float maxHealth = 10;
+	
 	void draw() 
 	{ 
 		healthbar();
@@ -11,7 +13,7 @@ class Ui
 		translate(75, 35);
 		noFill();
 		stroke(255);
-		rect(0, 0, 104, 30, 7);
+		rect(0, 0, (maxHealth * 10) + 4, 30, 7);
 		
 		fill(0, 255, 0);
 		stroke(255);

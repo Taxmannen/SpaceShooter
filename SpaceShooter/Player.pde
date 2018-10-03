@@ -11,12 +11,12 @@ class Player extends ObjectSpawner
 	public Player()
 	{
   		super();
+  		img = loadImage("Assets/Ship.png");
   		strokeWeight(2);
   		position.x = width/2;
   		position.y = height/2;
   		health = 10;
   		score = 0;
-  		img = loadImage("Assets/Ship.png");
 	}
 
 	void update()

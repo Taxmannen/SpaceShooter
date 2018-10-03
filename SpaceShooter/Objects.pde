@@ -1,5 +1,6 @@
 void Objects()
 {
+	bg.draw();
 	player.update();
 	if (PlayerToBulletCollision())
 	{
