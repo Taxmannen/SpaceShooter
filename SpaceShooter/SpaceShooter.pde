@@ -20,7 +20,7 @@ void draw()
 	if (gameState == 2)
 	{
 		bg.draw();
-		Objects();ui.draw();
+		Objects();
 		if (spaceBar) firePlayerBullet();
 		EnemyToBulletCollision();
 		ui.draw();
