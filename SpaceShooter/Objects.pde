@@ -3,14 +3,14 @@ void Objects()
 	player.update();
 	if (PlayerToBulletCollision())
 	{
-		player.health -= 1;
-		if (player.health == 0) gameState = 1;
+		player.hp -= 1;
+		if (player.hp == 0) gameState = 1;
 		//Remove bullet on collision
 	}
 	if(PlayerToEnemyCollision())
 	{
-		player.health -= 1;
-		if (player.health == 0) gameState = 1;
+		player.hp -= 1;
+		if (player.hp == 0) gameState = 1;
 	}
 	if(powerUp.size != 0)
 	{

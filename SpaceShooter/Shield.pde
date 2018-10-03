@@ -5,11 +5,13 @@ class Shield extends PowerUps
 	{
 		super(x,y);
 		size = 25;
+		hp = 5;
 	}
 	public Shield()
 	{
 		super();
 		size = 25;
+		hp = 5;
 	}
 
 	void update()

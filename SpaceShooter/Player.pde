@@ -1,13 +1,12 @@
 class Player extends ObjectSpawner 
 {
-	public int health;
 	public int score;
 		
 	PImage img;
 	float angle;
 	float rotationSpeed = 4.5;
 	float maxSpeed = 5;
-	int maxHealth = 10;
+	int maxHP = 10;
 
 	public Player()
 	{
@@ -16,15 +15,15 @@ class Player extends ObjectSpawner
   		strokeWeight(2);
   		position.x = width/2;
   		position.y = height/2;
-  		health = 10;
+  		hp = 10;
   		score = 0;
 	}
 
 	void update()
 	{
-		if (health > maxHealth)
+		if (hp > maxHP)
 		{
-			health = maxHealth;
+			hp = maxHP;
 		}
 		angle += getAxisRaw("Horizontal") * rotationSpeed;
 		

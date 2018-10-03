@@ -17,7 +17,7 @@ class Health extends PowerUps
 		if (pickedUp)
 		{
 			powerUp = new PowerUps();
-			player.health += 2;
+			player.hp += 2;
 		}
 	}
 

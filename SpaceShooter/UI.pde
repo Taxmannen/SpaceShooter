@@ -11,11 +11,11 @@ class Ui
 		translate(75, 35);
 		noFill();
 		stroke(255);
-		rect(0, 0, (player.maxHealth * 10) + 4, 30, 7);
+		rect(0, 0, (player.maxHP * 10) + 4, 30, 7);
 		
 		fill(0, 255, 0);
 		stroke(255);
-		for (int i = 0; i < player.health; i++) rect(-45 + (10 * i), 0, 10, 26);
+		for (int i = 0; i < player.hp; i++) rect(-45 + (10 * i), 0, 10, 26);
 	}
 
 	void score() 
