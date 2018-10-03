@@ -3,10 +3,7 @@ class Ui
 	int health = 10;
 	int score = 1000000;
 
-	void update() 
-	{
-		//Kan tas bort?
-	}
+	void update() {}
 
 	void draw() 
 	{ 
@@ -14,11 +11,11 @@ class Ui
 		translate(75, 35);
 		noFill();
 		stroke(255);
-		rect(0, 0, 105, 30, 7);
+		rect(0, 0, 104, 30, 7);
 
 		fill(0, 255, 0);
 		stroke(255);
-		for (int i = 0; i < health; i++)  rect(-45 + (10 * i), 0, 10, 26);
+		for (int i = 0; i < health; i++) rect(-45 + (10 * i), 0, 10, 26);
 
 
 		//Score Text
