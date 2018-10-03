@@ -3,6 +3,7 @@ boolean moveRight;
 boolean moveUp;
 boolean moveDown;
 boolean spaceBar;
+boolean restart;
 void keyPressed() 
 {
 	if (key == CODED) 
@@ -18,6 +19,7 @@ void keyPressed()
 		else if (key == 'd') moveRight = true;
 		else if (key == 'w') moveUp = true;
 		else if (key == 's') moveDown = true;
+		else if (key == 'r') restart = true;
 	}
 	if(keyCode == 32)
 	{

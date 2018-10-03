@@ -6,10 +6,11 @@ void currentGameState(int gs)
 		background(0);
 		textSize(50);
     	textAlign(CENTER);
-		text("Menu.\nPress S to start.", width/2, height/3);
-		if (moveDown)
+		text("Menu.\nPress R to start.", width/2, height/3);
+		if (restart)
 		{
 			gameState = 2;
+			restart = false;
 		}
 	}
 
@@ -19,9 +20,10 @@ void currentGameState(int gs)
 		background(0);
 		textSize(50);
 		textAlign(CENTER);
-		text("Game Over.\nPress S to restart.", width/2, height/3);
-		if (moveDown)
+		text("Game Over.\nPress R to restart.", width/2, height/3);
+		if (restart)
 		{
+			restart = false;
 			playerBullets.clear();
 			enemyBullets.clear();
 			enemies.clear();
@@ -34,7 +36,7 @@ void currentGameState(int gs)
 
 void reset()
 {
-	gameState = 0;
+	gameState = 2;
 	bg = new Background();
 	ui = new Ui();
 	powerUp = new Shield(-20, -20);
