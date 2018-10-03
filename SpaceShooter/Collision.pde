@@ -32,7 +32,12 @@ void EnemyToBulletCollision()
 					enemy.hp -= 1;
 					if(enemy.hp == 0)
 					{
-						powerUp = new Shield( enemy.position.x, enemy.position.y );
+						//10% chance for a powerup on kill
+						int rand = (int)random(1, 100);
+						if (rand <= 10){
+							powerUp = new Shield( enemy.position.x, enemy.position.y );
+						}
+
 						enemies.remove(i);
 						player.score += 1;
 					}
