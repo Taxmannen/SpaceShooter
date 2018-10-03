@@ -4,11 +4,13 @@ class Health extends PowerUps
 	public Health(float x, float y)
 	{
 		super(x,y);
+		img = loadImage("Assets/heart.png");
 		size = 20;
 	}
 	public Health()
 	{
 		super();
+		img = loadImage("Assets/heart.png");
 		size = 20;
 	}
 
@@ -26,7 +28,9 @@ class Health extends PowerUps
 		super.draw();
 		fill(0, 200, 0);
 		strokeWeight(0);
-		ellipse(position.x, position.y, size, size);
+		//ellipse(position.x, position.y, size, size);
+		imageMode(CENTER);
+		image(img, position.x, position.y, 35, 35);
 		strokeWeight(2);
 	}
 

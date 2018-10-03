@@ -1,6 +1,7 @@
 public class ObjectSpawner{
 	PVector position;
 	PVector direction;
+  PImage img;
 	float speed;
 	int size;
   int hp;

@@ -1,8 +1,7 @@
 class Player extends ObjectSpawner 
 {
 	public int score;
-		
-	PImage img;
+	
 	float angle;
 	float rotationSpeed = 4.5;
 	float maxSpeed = 5;
