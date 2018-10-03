@@ -12,6 +12,14 @@ void Objects()
 		player.health -= 1;
 		if (player.health == 0) gameState = 1;
 	}
+	if(powerUp.size != 0)
+	{
+		if(PowerUpCollision())
+		{
+			println("PowerUp taken.");
+			powerUp = new PowerUps();
+		}
+	}
 	player.draw();
 	powerUp.draw();
 	for (int i = 0; i < playerBullets.size(); i++)
@@ -50,4 +58,28 @@ void Objects()
 		enemy.draw();
 	}
 	ui.draw();
+}
+void GeneratePowerUp(PVector enemyPos)
+{
+	//10% chans för powerup på en kill.
+	int rand = (int)random(1, 101);
+	if (rand <= 10)
+	{
+		//randomiserar vilken powerup man får.
+		rand = (int)random(1, 3);
+		switch (rand)
+		{
+			case 1:
+			powerUp = new Shield( enemyPos.x, enemyPos.y );
+			break;
+
+			case 2:
+			powerUp = new Health( enemyPos.x, enemyPos.y );
+			break;	
+
+			default:
+			println("Default");
+			break;
+		}
+	}
 }
