@@ -37,6 +37,7 @@ void reset()
 	gameState = 0;
 	bg = new Background();
 	ui = new Ui();
+	powerUp = new Shield(-20, -20);
 	player = new Player();
 	numberOfEnemies = 5;
 	for (int i = 0; i < numberOfEnemies; ++i)
