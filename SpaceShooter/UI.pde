@@ -2,7 +2,12 @@ class Ui
 {
 	void draw() 
 	{ 
-		//Healthbar
+		healthbar();
+		score();		
+	}
+
+	void healthbar() 
+	{
 		translate(75, 35);
 		noFill();
 		stroke(255);
@@ -11,9 +16,10 @@ class Ui
 		fill(0, 255, 0);
 		stroke(255);
 		for (int i = 0; i < player.health; i++) rect(-45 + (10 * i), 0, 10, 26);
+	}
 
-
-		//Score Text
+	void score() 
+	{
 		translate(width - 90, 5);
 		fill(255);
 		textSize(25);

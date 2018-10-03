@@ -30,6 +30,8 @@ class Player extends ObjectSpawner
 
 		position.x += sin(radians(angle)) * speed; 
 		position.y -= cos(radians(angle)) * speed;
+
+		screenCheck();
 	}
 
 	void draw()
@@ -41,5 +43,14 @@ class Player extends ObjectSpawner
 		line(0, -10, 10, 10);
 		line(0, -10, -10, 10);
 		popMatrix();
+	}
+
+	void screenCheck() 
+	{
+		if (position.x > width) position.x = 0;
+		else if (position.x < 0) position.x = width;
+
+		if (position.y > height) position.y = 0;
+		else if (position.y < 0) position.y = height;
 	}
 }
