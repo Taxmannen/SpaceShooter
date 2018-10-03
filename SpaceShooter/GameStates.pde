@@ -6,7 +6,7 @@ void currentGameState(int gs)
 			
 		break;
 
-			
+
 	}
 
 
@@ -42,8 +42,9 @@ void currentGameState(int gs)
 
 void reset()
 {
-	bg = loadImage("Background/BG.jpg");
+	bg = loadImage("Assets/Background.jpg");
 	player = new Player();
+	ui = new Ui();
 	gameState = 0;
 	numberOfEnemies = 5;
 	for (int i = 0; i < numberOfEnemies; ++i)
@@ -53,7 +54,9 @@ void reset()
 			enemies.add(new EnemyTank());
 		}
 		else if (i == 1)
+		{
 			enemies.add(new EnemyFast());
+		}
 		else enemies.add(new EnemyStandard());
 	}
 }
