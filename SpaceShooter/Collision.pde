@@ -29,6 +29,7 @@ void EnemyToBulletCollision()
 					//Temporary solution
 					playerBullets.remove(j);
 					enemies.remove(i);
+					//Add player.score on enemy remove
 				}
 			}
 		}

@@ -5,6 +5,7 @@ void Objects()
 	{
 		player.health -= 1;
 		if (player.health == 0) gameState = 1;
+		//Remove bullet on collision
 	}
 	player.draw();
 	for (int i = 0; i < playerBullets.size(); i++)
