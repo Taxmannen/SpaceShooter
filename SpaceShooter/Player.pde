@@ -3,8 +3,10 @@ class Player extends ObjectSpawner
 	public int health;
 	public int score;
 	
+	PImage img;
 	float angle;
 	float rotationSpeed = 7.5;
+	float maxSpeed = 10;
 
 	public Player()
 	{
@@ -14,6 +16,7 @@ class Player extends ObjectSpawner
   		position.y = height/2;
   		health = 10;
   		score = 0;
+  		img = loadImage("Assets/Ship.png");
 	}
 
 	void update()
@@ -23,8 +26,8 @@ class Player extends ObjectSpawner
 		if      (angle > 360) angle = 0;
 		else if (angle < 0)   angle = 360;
 
-		if 		(getAxisRaw("Vertical") < 0 && speed < 10) speed += 1;
-		else if (getAxisRaw("Vertical") > 0 && speed > -5) speed -= 1;
+		if 		(getAxisRaw("Vertical") < 0 && speed < maxSpeed) speed += 1;
+		else if (getAxisRaw("Vertical") > 0 && speed > -maxSpeed/2) speed -= 1;
 		else if (speed < 0) speed += 0.25f; 
 		else if (speed > 0) speed -= 0.25f;
 
@@ -40,8 +43,8 @@ class Player extends ObjectSpawner
 		stroke(255);
   		translate(position.x, position.y);
   		rotate(radians(angle));
-		line(0, -10, 10, 10);
-		line(0, -10, -10, 10);
+  		imageMode(CENTER);
+		image(img, 0, 0, 50, 50);
 		popMatrix();
 	}
 
