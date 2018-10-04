@@ -18,9 +18,17 @@ void currentGameState(int gs)
 	if (gameState == 1)
 	{
 		background(0);
-		textSize(50);
 		textAlign(CENTER);
-		text("Game Over.\nPress R to restart.", width/2, height/3);
+		textSize(155);
+		fill(200, 0, 0);
+		text("Game Over!", width/2, height/3-50);
+		textSize(55);
+		fill(100, 100, 255);
+		text("Your total score was " + player.score, width/2, height/2);
+		textSize(35);
+		fill(127);
+		text("Press R to restart.", width/2, height/2+285);
+
 		if (restart)
 		{
 			restart = false;
