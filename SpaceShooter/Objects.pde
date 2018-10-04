@@ -70,7 +70,7 @@ void GeneratePowerUp(PVector enemyPos)
 {
 	//10% chans för powerup på en kill.
 	int rand = (int)random(1, 101);
-	if (rand <= 100)
+	if (rand <= 15)
 	{
 		//randomiserar vilken powerup man får.
 		rand = (int)random(1, 5);
