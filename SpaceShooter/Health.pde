@@ -28,7 +28,6 @@ class Health extends PowerUps
 		super.draw();
 		fill(0, 200, 0);
 		strokeWeight(0);
-		//ellipse(position.x, position.y, size, size);
 		imageMode(CENTER);
 		image(img, position.x, position.y, 35, 35);
 		strokeWeight(2);
