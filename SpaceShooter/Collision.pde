@@ -37,8 +37,12 @@ void EnemyToBulletCollision()
 						else if (enemies.get(i) instanceof EnemyTank) player.score += 20;
 						else if (enemies.get(i) instanceof EnemyFast) player.score += 30;
 						effects.add(new DeathEffect(enemies.get(i).position.x, enemies.get(i).position.y));
-						println(effects.size());
 						enemies.remove(i);
+
+						int newSpawn = (int)random(0, 3);
+						if (newSpawn == 0) enemies.add(new EnemyStandard());
+						else if (newSpawn == 1) enemies.add(new EnemyTank());
+						else if (newSpawn == 2) enemies.add(new EnemyFast());
 					}
 				}
 			}

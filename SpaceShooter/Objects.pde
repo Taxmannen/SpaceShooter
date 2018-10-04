@@ -59,7 +59,11 @@ void Objects()
 		enemy.draw();
 	}
 
-	for (int i = 0; i < effects.size(); i++) effects.get(i).draw();
+	for (int i = 0; i < effects.size(); i++) 
+	{ 
+		effects.get(i).draw();
+		if (effects.get(i).size <= 0) effects.remove(i);
+	}
 	ui.draw();
 }
 void GeneratePowerUp(PVector enemyPos)

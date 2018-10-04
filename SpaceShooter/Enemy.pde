@@ -12,7 +12,6 @@ class Enemy extends ObjectSpawner
   	super();
   }
 
-  
   //update function
   void update()
   {
@@ -24,7 +23,7 @@ class Enemy extends ObjectSpawner
 
   	position.x += direction.x * speed;
   	position.y += direction.y * speed;
-
+    screenCheck();
   }
 
   //draw function
@@ -40,4 +39,12 @@ class Enemy extends ObjectSpawner
     bulletList.add(new Bullet(position, direction, 128, 4));
   }
 
+  void screenCheck() 
+  {
+    if (position.x > width) position.x = 0;
+    else if (position.x < 0) position.x = width;
+
+    if (position.y > height) position.y = 0;
+    else if (position.y < 0) position.y = height;
+  }
 }
