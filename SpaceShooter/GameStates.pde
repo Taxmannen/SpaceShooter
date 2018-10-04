@@ -4,9 +4,13 @@ void currentGameState(int gs)
 	if (gameState == 0)
 	{
 		background(0);
-		textSize(50);
-    	textAlign(CENTER);
-		text("Menu.\nPress R to start.", width/2, height/3);
+		textAlign(CENTER);
+		textSize(115);
+		fill(0, 85, 200);
+		text("Space Shooter\n9001!", width/2, height/3+-70);
+		textSize(60);
+		fill(25, 170, 40);
+		text("Press R to start.", width/2, height/2+200);
 		if (restart)
 		{
 			gameState = 2;
