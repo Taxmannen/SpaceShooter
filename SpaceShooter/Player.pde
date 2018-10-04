@@ -2,6 +2,9 @@ class Player extends ObjectSpawner
 {
 	public int score;
 	
+	float time;
+	float oldTime;
+
 	float angle;
 	float rotationSpeed = 4.5;
 	float maxSpeed = 5;
@@ -16,10 +19,14 @@ class Player extends ObjectSpawner
   		position.y = height/2;
   		hp = 10;
   		score = 0;
+  		time = 0;
+  		oldTime = millis();
 	}
 
 	void update()
 	{
+		time = millis() - oldTime;
+		
 		angle += getAxisRaw("Horizontal") * rotationSpeed;
 		
 		if      (angle > 360) angle = 0;
