@@ -30,8 +30,6 @@ void currentGameState(int gs)
 			reset();
 		}
 	}
-
-
 }
 
 void reset()

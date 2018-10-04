@@ -36,14 +36,6 @@ class Player extends ObjectSpawner
 		screenCheck();
 	}
 
-	void healthUpdate()
-	{
-		if (hp > maxHP)
-		{
-			hp = maxHP;
-		}
-	}
-
 	void draw()
 	{
 		pushMatrix();
@@ -53,6 +45,11 @@ class Player extends ObjectSpawner
   		imageMode(CENTER);
 		image(img, 0, 0, 50, 50);
 		popMatrix();
+	}
+
+	void healthUpdate()
+	{
+		if (hp > maxHP) hp = maxHP;
 	}
 
 	void screenCheck() 
