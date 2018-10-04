@@ -33,8 +33,10 @@ void EnemyToBulletCollision()
 					if(enemy.hp == 0)
 					{
 						GeneratePowerUp(enemy.position);
+						if (enemies.get(i) instanceof EnemyStandard) player.score += 10;
+						else if (enemies.get(i) instanceof EnemyTank) player.score += 20;
+						else if (enemies.get(i) instanceof EnemyFast) player.score += 30;
 						enemies.remove(i);
-						player.score += 1;
 					}
 				}
 			}
