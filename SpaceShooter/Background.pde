@@ -5,7 +5,7 @@ class Background
 
 	Background() 
 	{
-		background = loadImage("Assets/Background.jpg");
+		background = loadImage("Assets/Background.png");
 	}
 
 	void draw() 

@@ -4,6 +4,7 @@ boolean moveUp;
 boolean moveDown;
 boolean spaceBar;
 boolean restart;
+
 void keyPressed() 
 {
 	if (key == CODED) 
