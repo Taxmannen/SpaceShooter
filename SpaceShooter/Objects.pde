@@ -19,9 +19,10 @@ void Objects()
 			powerUp.pickedUp = true;
 		}
 	}
-	player.draw();
 	powerUp.update();
 	powerUp.draw();
+	player.healthUpdate();
+	player.draw();
 	for (int i = 0; i < playerBullets.size(); i++)
 	{
 		Bullet bullet = playerBullets.get(i);

@@ -20,10 +20,6 @@ class Player extends ObjectSpawner
 
 	void update()
 	{
-		if (hp > maxHP)
-		{
-			hp = maxHP;
-		}
 		angle += getAxisRaw("Horizontal") * rotationSpeed;
 		
 		if      (angle > 360) angle = 0;
@@ -38,6 +34,14 @@ class Player extends ObjectSpawner
 		position.y -= cos(radians(angle)) * speed;
 
 		screenCheck();
+	}
+
+	void healthUpdate()
+	{
+		if (hp > maxHP)
+		{
+			hp = maxHP;
+		}
 	}
 
 	void draw()
