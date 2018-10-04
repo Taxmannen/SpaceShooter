@@ -57,27 +57,49 @@ boolean PlayerToEnemyCollision()
 		{
 			if(player.position.y - 10 < enemy.position.y + enemy.size/2 && player.position.y + 10 > enemy.position.y - enemy.size/2)
 			{
-				Positioning(enemy);
+				Positioning(player, enemy);
 				return true;
 			}
 		}
 	}
 	return false;
 }
-void Positioning(Enemy enemy)
+void Positioning(ObjectSpawner collider1, ObjectSpawner collider2)
 {
-	float x = player.position.x - enemy.position.x;
-	float y = player.position.y - enemy.position.y;
+	float x = collider1.position.x - collider2.position.x;
+	float y = collider1.position.y - collider2.position.y;
 	if(abs(x) > abs(y))
 	{
-		player.position.x = enemy.position.x + (enemy.size/2 + 10) * (x/abs(x));
+		collider1.position.x = collider2.position.x + (collider2.size/2 + 10) * (x/abs(x));
 	}
 	else
 	{
-		player.position.y = enemy.position.y + (enemy.size/2 + 10) * (y/abs(y));
+		collider1.position.y = collider2.position.y + (collider2.size/2 + 10) * (y/abs(y));
 	}
 }
 boolean PowerUpCollision()
 {
 	return dist(player.position.x, player.position.y, powerUp.position.x, powerUp.position.y) < 10 + powerUp.size/2;
+}
+boolean PowerUpEnemyCollision()
+{
+	for (Enemy enemy : enemies) 
+	{
+		if(dist(enemy.position.x, enemy.position.y, powerUp.position.x, powerUp.position.y) < enemy.size/2 + powerUp.size/2)
+		{
+			Positioning(enemy, powerUp);
+			return true;
+		}
+	}
+	for (int i = 0; i < enemyBullets.size(); i++)
+	{
+		Bullet bullet = enemyBullets.get(i);
+		if(dist(bullet.position.x, bullet.position.y, powerUp.position.x, powerUp.position.y) < bullet.size/2 + powerUp.size/2)
+		{
+			enemyBullets.remove(i);
+			return true;
+		}
+	}
+	return false;
+
 }
