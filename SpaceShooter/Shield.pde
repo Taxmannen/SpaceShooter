@@ -22,6 +22,14 @@ class Shield extends PowerUps
 			size = 80;
 			position.x = player.position.x;
 			position.y = player.position.y;
+			if(PowerUpEnemyCollision())
+			{
+				hp -= 1;
+				if(hp == 0)
+				{
+					powerUp = new PowerUps();
+				}
+			}
 		}
 	}
 
@@ -29,7 +37,7 @@ class Shield extends PowerUps
 	{
 		super.draw();
 		noFill();
-		strokeWeight(10);
+		strokeWeight(hp * 2);
 		ellipse(position.x, position.y, size, size);
 		strokeWeight(2);
 	}
