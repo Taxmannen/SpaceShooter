@@ -1,18 +1,17 @@
 class Background 
 {
-	PImage img;
-	int speed = 5;
+	PImage background;
+	int scrollSpeed = 2;
 
 	Background() 
 	{
-		img = loadImage("Assets/Background.jpg");
+		background = loadImage("Assets/Background.jpg");
 	}
 
 	void draw() 
 	{
-		background(img);
-		/*int x = (frameCount % img.width) * speed;
-  		for (int i = -x ; i < width ; i += img.width)
-    	copy(img, 0, 0, img.width, height, i, 0, img.width, height);*/
+		int y = (frameCount % background.height) * scrollSpeed;
+  		for (int i = -y ; i < height ; i += background.height)
+    	copy(background, 0, 0, width, background.height, 0, -i, width, background.height);
 	}
 }
