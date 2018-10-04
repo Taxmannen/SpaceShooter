@@ -22,6 +22,10 @@ public class MachineGunMode extends PowerUps
 				if(spaceBar && time%5 == 0)
 					firePlayerBullet();
 			}
+			else
+			{
+				powerUp = new PowerUps();
+			}
 		}
 	}
 	void draw()

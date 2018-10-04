@@ -73,7 +73,7 @@ void GeneratePowerUp(PVector enemyPos)
 	if (rand <= 100)
 	{
 		//randomiserar vilken powerup man får.
-		rand = (int)random(1, 4);
+		rand = (int)random(1, 5);
 		switch (rand)
 		{
 			case 1:
@@ -86,7 +86,10 @@ void GeneratePowerUp(PVector enemyPos)
 
 			case 3:
 			powerUp = new MachineGunMode(enemyPos.x, enemyPos.y);
-			println("MachineGunMode");
+			break;
+
+			case 4:
+			powerUp = new MultiShot(enemyPos.x, enemyPos.y);
 			break;
 
 			default:
