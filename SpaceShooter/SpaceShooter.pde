@@ -6,7 +6,8 @@ PowerUps powerUp;
 ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-Background bg; 
+ArrayList<Effect> effects = new ArrayList<Effect>();
+Background bg;
 boolean once;
 
 void setup()

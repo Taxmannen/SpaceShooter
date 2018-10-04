@@ -1,4 +1,4 @@
-class Background 
+class Background
 {
 	PImage background;
 	int scrollSpeed = 2;

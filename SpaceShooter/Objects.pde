@@ -7,12 +7,12 @@ void Objects()
 		if (player.hp == 0) gameState = 1;
 		//Remove bullet on collision
 	}
-	if(PlayerToEnemyCollision())
+	if (PlayerToEnemyCollision())
 	{
 		player.hp -= 1;
 		if (player.hp == 0) gameState = 1;
 	}
-	if(powerUp.size != 0)
+	if (powerUp.size != 0)
 	{
 		if(PowerUpCollision())
 		{
@@ -28,7 +28,7 @@ void Objects()
 		Bullet bullet = playerBullets.get(i);
 		bullet.draw();
 		bullet.update();
-		if(bullet.outOfBounds())
+		if (bullet.outOfBounds())
 		{
 			playerBullets.remove(i);
 		}
@@ -39,7 +39,7 @@ void Objects()
 		Bullet bullet = enemyBullets.get(i);
 		bullet.draw();
 		bullet.update();
-		if(bullet.outOfBounds())
+		if (bullet.outOfBounds())
 		{
 			enemyBullets.remove(i);
 		}
@@ -48,7 +48,7 @@ void Objects()
 	for (int i = 0; i < enemies.size(); ++i)
 	{
 		Enemy enemy = enemies.get(i);
-		if(frameCount%120 == 0 && (enemies.get(i) instanceof EnemyStandard || enemies.get(i) instanceof EnemyFast))
+		if (frameCount%120 == 0 && (enemies.get(i) instanceof EnemyStandard || enemies.get(i) instanceof EnemyFast))
 			enemy.fireBullet(enemyBullets);
 		enemy.update();
 	}
@@ -58,6 +58,8 @@ void Objects()
 		Enemy enemy = enemies.get(i);
 		enemy.draw();
 	}
+
+	for (int i = 0; i < effects.size(); i++) effects.get(i).draw();
 	ui.draw();
 }
 void GeneratePowerUp(PVector enemyPos)
