@@ -3,13 +3,14 @@ void currentGameState(int gs)
 	//Menu screen
 	if (gameState == 0)
 	{
-		background(0);
+		PImage bg = loadImage("Assets/Menu.png");
+		image(bg, 0, 0);
 		textAlign(CENTER);
-		textSize(115);
-		fill(0, 85, 200);
+		textSize(125);
+		fill(0, 255, 255);
 		text("Space Shooter\n9001!", width/2, height/3+-70);
 		textSize(60);
-		fill(25, 170, 40);
+		fill(255, 0, 235);
 		text("Press R to start.", width/2, height/2+200);
 		if (restart)
 		{
@@ -22,6 +23,9 @@ void currentGameState(int gs)
 	if (gameState == 1)
 	{
 		background(0);
+		imageMode(CORNER);
+		PImage go = loadImage("Assets/Background.png");
+		image(go, 0, 0);
 		textAlign(CENTER);
 		textSize(155);
 		fill(200, 0, 0);
