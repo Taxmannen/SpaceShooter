@@ -2,35 +2,36 @@
 
 <h1> Design Document </h1>
 
-Gameplay
+<b> Gameplay </b>
 
 Top-down space shooter. Maneuver around and shoot back at enemies who is trying to destroy you. The game is point based. Objective is to kill as many enemies as you can while surviving for as long as possible. 
 
-Controls
+<b> Controls </b>
 
 Control the player with the help of the WASD keys. W is forward throttle, S is reverse, A and D rotates the ship. If you reach the edge of the screen you are either stopped of forced back. You shoot with Space Bar and if you die, you reset the game with R.
 
-Features:
+<b> Features: </b>
 
-Powerups
-Enemy types
-Health Drops
+* Powerups
+* Enemy types
+* Health Drops
 
-Powerups:
+<b> Powerups: </b>
 
-Shield 
+<b> Shield </b> 
 An ellipse that appears around the player’s ship. Protects you from x amount of shots. The StrokeWeight of the ellipse is reduced depending on how much hp the shield has left.
 
-Multishot 
+<b> Multishot </b>  
 When you shoot you fire three shots at once in a spreading fashion. The first shot is straight while the other two are in a 45 degree angle out from the first.
 
-Machinegun mode
+<b> Machinegun mode </b>
 For a limited time, your fire rate is tripled. While this effect is active your ship flashes in a different color.
-Health Drop
+
+<b> Health Drop </b>
 Restores x amount of health to the player.
 
 
-Enemy types:
+<b> Enemy types: </b>
 Standard base enemy. 
 3 HP, movement speed 2.
 Tries to stay a certain distance from the player and moves away if it gets close.
@@ -47,9 +48,7 @@ Moves in closer to the player than the standard enemy but stays at a distance.
 
 <h1> Credits </h1>
 
-Music Playc: https://opengameart.org/content/5-chiptunes-action
-
-Music Game Over: https://opengameart.org/content/sad-piano-0
+Music: https://opengameart.org/content/5-chiptunes-action
 
 Player Spaceship model: https://opengameart.org/content/spaceship-4
 
