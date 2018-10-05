@@ -42,8 +42,11 @@ class Player extends ObjectSpawner
 		else if (speed < 0) speed += 0.25f; 
 		else if (speed > 0) speed -= 0.25f;
 
-		if (spaceBar && once) firePlayerBullet();
-		MultiFiring();
+		if (spaceBar && once) 
+		{
+			MultiFiring();
+			firePlayerBullet();
+		}
 		Mgm();
 		PowerShield();
 
