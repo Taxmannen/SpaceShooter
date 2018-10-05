@@ -15,17 +15,7 @@ public class MachineGunMode extends PowerUps
 		super.update();
 		if(pickedUp)
 		{
-			position.set(-10, -10);
-			if(time/60 < 10)
-			{
-				time++;
-				if(spaceBar && time%5 == 0)
-					firePlayerBullet();
-			}
-			else
-			{
-				powerUp = new PowerUps();
-			}
+			powerUp = new PowerUps();
 		}
 	}
 	void draw()

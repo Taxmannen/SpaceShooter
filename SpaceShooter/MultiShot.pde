@@ -13,14 +13,7 @@ public class MultiShot extends PowerUps
 	{
 		super.update();
 		if(pickedUp)
-		{
-			position.set(-10, -10);
-			if(spaceBar && once)
-			{
-				playerBullets.add(new Bullet(player.position, new PVector(sin(radians(player.angle + 30)) * player.maxSpeed, cos(radians(player.angle + 30)) * -player.maxSpeed), 255, 5));
-				playerBullets.add(new Bullet(player.position, new PVector(sin(radians(player.angle - 30)) * player.maxSpeed, cos(radians(player.angle - 30)) * -player.maxSpeed), 255, 5));
-			}
-		}
+			powerUp = new PowerUps();
 	}
 	void draw()
 	{

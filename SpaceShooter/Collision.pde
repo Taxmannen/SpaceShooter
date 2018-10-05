@@ -85,16 +85,16 @@ boolean PowerUpEnemyCollision()
 {
 	for (Enemy enemy : enemies) 
 	{
-		if(dist(enemy.position.x, enemy.position.y, powerUp.position.x, powerUp.position.y) < enemy.size/2 + powerUp.size/2)
+		if(dist(enemy.position.x, enemy.position.y, player.position.x, player.position.y) < enemy.size/2 + player.size/2 + 10)
 		{
-			Positioning(enemy, powerUp);
+			Positioning(enemy, player);
 			return true;
 		}
 	}
 	for (int i = 0; i < enemyBullets.size(); i++)
 	{
 		Bullet bullet = enemyBullets.get(i);
-		if(dist(bullet.position.x, bullet.position.y, powerUp.position.x, powerUp.position.y) < bullet.size/2 + powerUp.size/2)
+		if(dist(bullet.position.x, bullet.position.y, player.position.x, player.position.y) < bullet.size/2 + player.size/2 + 10)
 		{
 			enemyBullets.remove(i);
 			return true;

@@ -17,6 +17,14 @@ void Objects()
 		if(PowerUpCollision())
 		{
 			powerUp.pickedUp = true;
+			if(powerUp instanceof MultiShot)
+			{
+				player.multiShot = true;
+			}
+			if(powerUp instanceof MachineGunMode)
+			{
+				player.machineGunMode = true;
+			}
 		}
 	}
 	powerUp.update();
@@ -70,7 +78,7 @@ void GeneratePowerUp(PVector enemyPos)
 {
 	//10% chans för powerup på en kill.
 	int rand = (int)random(1, 101);
-	if (rand <= 15)
+	if (rand <= 150)
 	{
 		//randomiserar vilken powerup man får.
 		rand = (int)random(1, 5);

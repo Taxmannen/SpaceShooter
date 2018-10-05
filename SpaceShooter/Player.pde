@@ -9,6 +9,9 @@ class Player extends ObjectSpawner
 	float rotationSpeed = 4.5;
 	float maxSpeed = 5;
 	int maxHP = 10;
+	int mgmTime = 0;
+	int shieldHp = 0;
+	boolean shield = false, machineGunMode = false, multiShot = false;
 
 	public Player()
 	{
@@ -20,7 +23,7 @@ class Player extends ObjectSpawner
   		hp = 10;
   		score = 0;
   		time = 0;
-  		size = 50;
+  		size = 60;
   		oldTime = millis();
 	}
 
@@ -38,6 +41,10 @@ class Player extends ObjectSpawner
 		else if (getAxisRaw("Vertical") > 0 && speed > -maxSpeed/2) speed -= 1;
 		else if (speed < 0) speed += 0.25f; 
 		else if (speed > 0) speed -= 0.25f;
+
+		MultiFiring();
+		Mgm();
+		PowerShield();
 
 		position.x += sin(radians(angle)) * speed; 
 		position.y -= cos(radians(angle)) * speed;
@@ -59,5 +66,52 @@ class Player extends ObjectSpawner
 	void healthUpdate()
 	{
 		if (hp > maxHP) hp = maxHP;
+	}
+	void MultiFiring()
+	{
+		if(spaceBar && once && multiShot)
+		{
+			playerBullets.add(new Bullet(player.position, new PVector(sin(radians(player.angle + 30)) * player.maxSpeed, cos(radians(player.angle + 30)) * -player.maxSpeed), 255, 5));
+			playerBullets.add(new Bullet(player.position, new PVector(sin(radians(player.angle - 30)) * player.maxSpeed, cos(radians(player.angle - 30)) * -player.maxSpeed), 255, 5));
+		}
+	}
+	void Mgm()
+	{
+		if(mgmTime/60 < 10 && machineGunMode)
+		{
+			mgmTime++;
+			if(spaceBar && mgmTime%5 == 0)
+			{
+				firePlayerBullet();
+				if(multiShot)
+				{
+					playerBullets.add(new Bullet(player.position, new PVector(sin(radians(player.angle + 30)) * player.maxSpeed, cos(radians(player.angle + 30)) * -player.maxSpeed), 255, 5));
+					playerBullets.add(new Bullet(player.position, new PVector(sin(radians(player.angle - 30)) * player.maxSpeed, cos(radians(player.angle - 30)) * -player.maxSpeed), 255, 5));
+				}
+			}
+		}
+		else
+		{
+			machineGunMode = false;
+			mgmTime = 0;
+		}
+	}
+	void PowerShield()
+	{
+		if(shield)
+		{
+			noFill();
+			strokeWeight(shieldHp * 2);
+			ellipse(position.x, position.y, size + 20, size + 20);
+			strokeWeight(2);
+			if(PowerUpEnemyCollision())
+			{
+				shieldHp--;
+				if (shieldHp <= 0)
+				{
+					shield = false;
+				}
+			}
+		}
 	}
 }

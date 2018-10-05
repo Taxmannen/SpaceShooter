@@ -19,7 +19,10 @@ class Shield extends PowerUps
 		super.update();
 		if (pickedUp)
 		{
-			size = 80;
+			player.shieldHp = 5;
+			player.shield = true;
+			powerUp = new PowerUps();
+			/*size = 80;
 			position.x = player.position.x;
 			position.y = player.position.y;
 			if(PowerUpEnemyCollision())
@@ -29,7 +32,7 @@ class Shield extends PowerUps
 				{
 					powerUp = new PowerUps();
 				}
-			}
+			}*/
 		}
 	}
 
