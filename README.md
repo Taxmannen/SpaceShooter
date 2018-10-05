@@ -27,4 +27,4 @@ Credits:
 Player Spaceship model: https://opengameart.org/content/spaceship-4
 EnemyStandard model: https://opengameart.org/content/spaceship-tutorial-0
 EnemyFast model: https://opengameart.org/content/spaceship-5
-EnemyTank model: https://opengameart.org/content/a-layered-asteroid-rock
+EnemyTank model: https://opengameart.org/content/asteroid-generator-and-a-set-of-generated-asteroids
