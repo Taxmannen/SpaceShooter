@@ -8,7 +8,7 @@ class EnemyStandard extends Enemy
     img = loadImage("Assets/EStandard.png");
   	speed = 2;
   	hp = 3;
-  	size = 40;
+  	size = 50;
   }
 
   public EnemyStandard()
@@ -17,7 +17,7 @@ class EnemyStandard extends Enemy
     img = loadImage("Assets/EStandard.png");
   	speed = 2;
   	hp = 3;
-  	size = 40;
+  	size = 50;
   }
 
   
