@@ -43,6 +43,8 @@ void EnemyToBulletCollision()
 						if (newSpawn == 0) enemies.add(new EnemyStandard());
 						else if (newSpawn == 1) enemies.add(new EnemyTank());
 						else if (newSpawn == 2) enemies.add(new EnemyFast());
+
+						deathSound.play();
 					}
 				}
 			}
@@ -101,5 +103,4 @@ boolean PowerUpEnemyCollision()
 		}
 	}
 	return false;
-
 }

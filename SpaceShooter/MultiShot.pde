@@ -16,6 +16,7 @@ public class MultiShot extends PowerUps
 		{
 			player.multiShot = true;
 			powerUp = new PowerUps();
+			powerUpSound.play();
 		}
 	}
 	void draw()

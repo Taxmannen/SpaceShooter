@@ -20,6 +20,7 @@ class Health extends PowerUps
 		{
 			powerUp = new PowerUps();
 			player.hp += 2;
+			health.play();
 		}
 	}
 

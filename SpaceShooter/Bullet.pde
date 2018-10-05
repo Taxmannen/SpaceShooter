@@ -13,6 +13,7 @@ class Bullet extends ObjectSpawner
 		size = 10;
 		colour = bulletColour;
 		direction.mult(speed);
+		bulletSound.play();
 	}
 
   	//update function

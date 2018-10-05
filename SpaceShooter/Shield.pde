@@ -22,6 +22,7 @@ class Shield extends PowerUps
 			player.shieldHp = 5;
 			player.shield = true;
 			powerUp = new PowerUps();
+			powerUpSound.play();
 			/*size = 80;
 			position.x = player.position.x;
 			position.y = player.position.y;
