@@ -45,7 +45,7 @@ Moves in closer to the player than the standard enemy but stays at a distance.
 
 
 
-<h1> Credits </h1>:
+<h1> Credits </h1>
 
 Music: https://opengameart.org/content/5-chiptunes-action
 
