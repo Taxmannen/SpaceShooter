@@ -40,8 +40,8 @@ void draw()
 
 void soundSetup() 
 {
-	bulletSound = new SoundFile(this, "Assets/Bullet.wav");
-	deathSound = new SoundFile(this, "Assets/Death.wav");
-	healthSound = new SoundFile(this, "Assets/Health.wav");
-	powerUpSound = new SoundFile(this, "Assets/Power Up.wav");
+	bulletSound = new SoundFile(this, "Assets/Sounds/Bullet.wav");
+	deathSound = new SoundFile(this, "Assets/Sounds/Death.wav");
+	healthSound = new SoundFile(this, "Assets/Sounds/Health.wav");
+	powerUpSound = new SoundFile(this, "Assets/Sounds/Power Up.wav");
 }

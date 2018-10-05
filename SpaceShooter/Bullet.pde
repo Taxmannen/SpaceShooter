@@ -1,11 +1,10 @@
 class Bullet extends ObjectSpawner
 {
 	int colour;
+ 	
  	//constructor
-	public Bullet()
-	{
-		
-	}
+	public Bullet() { }
+
 	public Bullet(PVector pos, PVector dir, int bulletColour, float speed)
 	{
 		position = new PVector(pos.x, pos.y);
@@ -13,7 +12,6 @@ class Bullet extends ObjectSpawner
 		size = 10;
 		colour = bulletColour;
 		direction.mult(speed);
-		bulletSound.play();
 	}
 
   	//update function

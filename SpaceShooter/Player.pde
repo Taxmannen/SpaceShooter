@@ -125,5 +125,6 @@ class Player extends ObjectSpawner
 		dir.normalize();
 		dir.mult(3);
 		playerBullets.add(new Bullet(player.position, dir, 255, 5));
+		bulletSound.play();
 	}
 }
