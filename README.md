@@ -47,7 +47,9 @@ Moves in closer to the player than the standard enemy but stays at a distance.
 
 <h1> Credits </h1>
 
-Music: https://opengameart.org/content/5-chiptunes-action
+Music Playc: https://opengameart.org/content/5-chiptunes-action
+
+Music Game Over: https://opengameart.org/content/sad-piano-0
 
 Player Spaceship model: https://opengameart.org/content/spaceship-4
 
