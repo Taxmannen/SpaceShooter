@@ -5,17 +5,19 @@ class EnemyFast extends Enemy
   public EnemyFast(float newX, float newY)
   {
   	super(newX,newY);
-  	speed = 3;
-  	hp = 1;
-  	size = 10;
+    img = loadImage("Assets/EFast.png");
+    speed = 3;
+    hp = 1;
+    size = 30;
   }
 
   public EnemyFast()
   {
   	super();
-  	speed = 3;
-  	hp = 1;
-  	size = 10;
+    img = loadImage("Assets/EFast.png");
+    speed = 3;
+    hp = 1;
+    size = 30;
   }
 
   
@@ -59,11 +61,13 @@ class EnemyFast extends Enemy
   //draw function
   void draw()
   {
-  	fill(255, 0, 0);
-  	stroke(255, 0, 0);
-  	super.draw();
-
-  	rect(position.x, position.y, size, size/2);
+    pushMatrix();
+    translate(position.x, position.y);
+    rotate(direction.heading()+HALF_PI);
+    imageMode(CENTER);
+    image(img, 0, 0, size, size);
+    popMatrix();
+    super.draw();
   }
 
 }

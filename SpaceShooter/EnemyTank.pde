@@ -5,16 +5,18 @@ class EnemyTank extends Enemy
 	public EnemyTank(float newX, float newY)
 	{
 		super(newX,newY);
+		img = loadImage("Assets/ETank.png");
 		speed = 1;
 		hp = 10;
-		size = 30;
+		size = 50;
 	}
 	public EnemyTank()
 	{
 		super();
+		img = loadImage("Assets/ETank.png");
 		speed = 1;
 		hp = 10;
-		size = 30;
+		size = 50;
 	}
 
 	void update()
@@ -38,10 +40,12 @@ class EnemyTank extends Enemy
 
 	void draw()
 	{
-		fill(155, 100, 50);
-		stroke(155, 100, 50);
+		pushMatrix();
+		translate(position.x, position.y);
+		imageMode(CENTER);
+		image(img, 0, 0, size, size);
+		popMatrix();
 		super.draw();
-		ellipse(position.x, position.y, size, size);
 	}
 
 }

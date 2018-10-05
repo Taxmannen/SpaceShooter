@@ -47,19 +47,13 @@ class EnemyStandard extends Enemy
   void draw()
   {
     pushMatrix();
-
     translate(position.x, position.y);
-
     rotate(direction.heading()+HALF_PI);
-
     imageMode(CENTER);
     image(img, 0, 0, size, size);
-
     popMatrix();
 
     super.draw();
-
-  	//rect(position.x, position.y, size, size);
   }
 
 }
