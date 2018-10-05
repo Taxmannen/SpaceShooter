@@ -1,4 +1,3 @@
-	
 import processing.sound.*;
 SoundFile bulletSound;
 SoundFile deathSound;
@@ -6,6 +5,7 @@ SoundFile healthSound;
 SoundFile powerUpSound;
 
 Player player;
+Background bg;
 Ui ui;
 int gameState;
 int numberOfEnemies;
@@ -14,7 +14,6 @@ ArrayList<Bullet> playerBullets = new ArrayList<Bullet>();
 ArrayList<Bullet> enemyBullets = new ArrayList<Bullet>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 ArrayList<Effect> effects = new ArrayList<Effect>();
-Background bg;
 boolean once;
 
 void setup()
@@ -40,8 +39,8 @@ void draw()
 
 void soundSetup() 
 {
-	bulletSound = new SoundFile(this, "Assets/Sounds/Bullet.wav");
-	deathSound = new SoundFile(this, "Assets/Sounds/Death.wav");
-	healthSound = new SoundFile(this, "Assets/Sounds/Health.wav");
+	bulletSound  = new SoundFile(this, "Assets/Sounds/Bullet.wav");
+	deathSound   = new SoundFile(this, "Assets/Sounds/Death.wav");
+	healthSound  = new SoundFile(this, "Assets/Sounds/Health.wav");
 	powerUpSound = new SoundFile(this, "Assets/Sounds/Power Up.wav");
 }
