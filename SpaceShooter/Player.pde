@@ -4,6 +4,7 @@ class Player extends ObjectSpawner
 	
 	float time;
 	float oldTime;
+	int timeScore;
 
 	float angle;
 	float rotationSpeed = 4.5;
@@ -20,13 +21,15 @@ class Player extends ObjectSpawner
   		hp = 10;
   		score = 0;
   		time = 0;
+  		size = 50;
   		oldTime = millis();
 	}
 
 	void update()
 	{
 		time = millis() - oldTime;
-		
+		timeScore = (int)time/1000;
+
 		angle += getAxisRaw("Horizontal") * rotationSpeed;
 		
 		if      (angle > 360) angle = 0;
@@ -50,7 +53,7 @@ class Player extends ObjectSpawner
   		translate(position.x, position.y);
   		rotate(radians(angle));
   		imageMode(CENTER);
-		image(img, 0, 0, 50, 50);
+		image(img, 0, 0, size, size);
 		popMatrix();
 	}
 

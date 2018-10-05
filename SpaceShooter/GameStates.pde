@@ -32,7 +32,7 @@ void currentGameState(int gs)
 		text("Game Over!", width/2, height/3-50);
 		textSize(55);
 		fill(100, 100, 255);
-		text("Your total score was " + player.score, width/2, height/2);
+		text("Your total score was " + (player.score + player.timeScore), width/2, height/2);
 		textSize(35);
 		fill(127);
 		text("Press R to restart.", width/2, height/2+285);
