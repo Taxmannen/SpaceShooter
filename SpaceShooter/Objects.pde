@@ -17,14 +17,6 @@ void Objects()
 		if(PowerUpCollision())
 		{
 			powerUp.pickedUp = true;
-			if(powerUp instanceof MultiShot)
-			{
-				player.multiShot = true;
-			}
-			if(powerUp instanceof MachineGunMode)
-			{
-				player.machineGunMode = true;
-			}
 		}
 	}
 	powerUp.update();

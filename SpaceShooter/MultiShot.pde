@@ -13,7 +13,10 @@ public class MultiShot extends PowerUps
 	{
 		super.update();
 		if(pickedUp)
+		{
+			player.multiShot = true;
 			powerUp = new PowerUps();
+		}
 	}
 	void draw()
 	{

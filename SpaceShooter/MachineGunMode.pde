@@ -15,6 +15,7 @@ public class MachineGunMode extends PowerUps
 		super.update();
 		if(pickedUp)
 		{
+			player.machineGunMode = true;
 			powerUp = new PowerUps();
 		}
 	}
