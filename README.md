@@ -1,4 +1,4 @@
-# SpaceShooter
+# SpaceShooter (Daniel, Johan, Sebastian)
 
 <h1> Design Document </h1>
 
