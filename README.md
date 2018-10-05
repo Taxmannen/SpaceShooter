@@ -32,6 +32,7 @@ Restores x amount of health to the player.
 
 
 <b> Enemy types: </b>
+
 Standard base enemy. 
 3 HP, movement speed 2.
 Tries to stay a certain distance from the player and moves away if it gets close.
