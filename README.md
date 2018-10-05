@@ -1,29 +1,8 @@
 # SpaceShooter
 
-To do:
-
-  Johan:
-    
-    Class ObjectSpawner
-    
-    Gamestates
-    
-    Class Enemies
-    
-  Daniel:
-    
-    Class Player
-    
-    Input
-    
-  Sebastian:
-  
-    Collision
-    
-    Class Bullet
 
 
-Credits:
+<h1> Credits </h1>:
 
 Music: https://opengameart.org/content/5-chiptunes-action
 
