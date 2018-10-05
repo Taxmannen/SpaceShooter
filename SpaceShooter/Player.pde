@@ -42,6 +42,7 @@ class Player extends ObjectSpawner
 		else if (speed < 0) speed += 0.25f; 
 		else if (speed > 0) speed -= 0.25f;
 
+		if (spaceBar && once) firePlayerBullet();
 		MultiFiring();
 		Mgm();
 		PowerShield();
@@ -113,5 +114,13 @@ class Player extends ObjectSpawner
 				}
 			}
 		}
+	}
+	void firePlayerBullet()
+	{
+		once = false;
+		PVector dir = new PVector(sin(radians(player.angle)) * player.maxSpeed, cos(radians(player.angle)) * -player.maxSpeed);
+		dir.normalize();
+		dir.mult(3);
+		playerBullets.add(new Bullet(player.position, dir, 255, 5));
 	}
 }

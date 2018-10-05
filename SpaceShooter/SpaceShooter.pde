@@ -25,7 +25,6 @@ void draw()
 	{
 		bg.draw();
 		Objects();
-		if (spaceBar && once) firePlayerBullet();
 		EnemyToBulletCollision();
 		ui.draw();
 	}

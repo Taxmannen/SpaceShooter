@@ -65,12 +65,3 @@ float getAxisRaw(String axis)
 	}
 	return 0;
 }
-
-void firePlayerBullet()
-{
-	once = false;
-	PVector dir = new PVector(sin(radians(player.angle)) * player.maxSpeed, cos(radians(player.angle)) * -player.maxSpeed);
-	dir.normalize();
-	dir.mult(3);
-	playerBullets.add(new Bullet(player.position, dir, 255, 5));
-}
