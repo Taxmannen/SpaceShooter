@@ -4,13 +4,23 @@ void Objects()
 	if (PlayerToBulletCollision())
 	{
 		player.hp -= 1;
-		if (player.hp == 0) gameState = 1;
+		if (player.hp == 0)
+		{
+			gameState = 1;
+			musicGame.stop();
+			musicDeath.play();
+		} 
 		//Remove bullet on collision
 	}
 	if (PlayerToEnemyCollision())
 	{
 		player.hp -= 1;
-		if (player.hp == 0) gameState = 1;
+		if (player.hp == 0)
+		{
+			gameState = 1;
+			musicGame.stop();
+			musicDeath.play();
+		} 
 	}
 	if (powerUp.size != 0)
 	{

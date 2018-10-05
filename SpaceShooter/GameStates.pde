@@ -3,6 +3,11 @@ void currentGameState(int gs)
 	//Menu screen
 	if (gameState == 0)
 	{
+		if (frameCount == 1)
+		{
+			musicMenu.play();
+		}
+
 		PImage bg = loadImage("Assets/Menu.png");
 		image(bg, 0, 0);
 		textAlign(CENTER);
@@ -14,6 +19,8 @@ void currentGameState(int gs)
 		text("Press R to start.", width/2, height/2+200);
 		if (restart)
 		{
+			musicMenu.stop();
+			musicGame.play();
 			gameState = 2;
 			restart = false;
 		}
@@ -39,6 +46,8 @@ void currentGameState(int gs)
 
 		if (restart)
 		{
+			musicDeath.stop();
+			musicGame.play();
 			restart = false;
 			playerBullets.clear();
 			enemyBullets.clear();

@@ -3,6 +3,9 @@ SoundFile bulletSound;
 SoundFile deathSound;
 SoundFile healthSound;
 SoundFile powerUpSound;
+SoundFile musicDeath;
+SoundFile musicGame;
+SoundFile musicMenu;
 
 Player player;
 Background bg;
@@ -30,6 +33,7 @@ void draw()
 	currentGameState(gameState);
 	if (gameState == 2)
 	{
+		musicMenu.stop();
 		bg.draw();
 		Objects();
 		EnemyToBulletCollision();
@@ -43,4 +47,8 @@ void soundSetup()
 	deathSound   = new SoundFile(this, "Assets/Sounds/Death.wav");
 	healthSound  = new SoundFile(this, "Assets/Sounds/Health.wav");
 	powerUpSound = new SoundFile(this, "Assets/Sounds/Power Up.wav");
+	musicMenu = new SoundFile(this, "Assets/Sounds/MusicMenu.wav");
+	musicGame = new SoundFile(this, "Assets/Sounds/MusicGame.wav");
+	musicDeath = new SoundFile(this, "Assets/Sounds/MusicDeath.wav");
+
 }
