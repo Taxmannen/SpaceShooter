@@ -5,17 +5,19 @@ class EnemyStandard extends Enemy
   public EnemyStandard(float newX, float newY)
   {
   	super(newX,newY);
+    img = loadImage("Assets/EStandard.png");
   	speed = 2;
   	hp = 3;
-  	size = 20;
+  	size = 40;
   }
 
   public EnemyStandard()
   {
   	super();
+    img = loadImage("Assets/EStandard.png");
   	speed = 2;
   	hp = 3;
-  	size = 20;
+  	size = 40;
   }
 
   
@@ -44,11 +46,20 @@ class EnemyStandard extends Enemy
   //draw function
   void draw()
   {
-  	fill(0, 100, 255);
-  	stroke(0, 100, 255);
-  	super.draw();
-  	
-  	rect(position.x, position.y, size, size);
+    pushMatrix();
+
+    translate(position.x, position.y);
+
+    rotate(direction.heading()+HALF_PI);
+
+    imageMode(CENTER);
+    image(img, 0, 0, size, size);
+
+    popMatrix();
+
+    super.draw();
+
+  	//rect(position.x, position.y, size, size);
   }
 
 }
