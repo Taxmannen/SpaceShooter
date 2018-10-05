@@ -18,6 +18,7 @@ public class MachineGunMode extends PowerUps
 			player.machineGunMode = true;
 			player.mgmTime = 0;
 			powerUp = new PowerUps();
+			powerUpSound.play();
 		}
 	}
 	void draw()
