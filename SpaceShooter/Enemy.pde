@@ -23,7 +23,6 @@ class Enemy extends ObjectSpawner
 
   	position.x += direction.x * speed;
   	position.y += direction.y * speed;
-    screenCheck();
   }
 
   //draw function
