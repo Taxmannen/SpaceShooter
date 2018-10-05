@@ -25,6 +25,8 @@ To do:
 
 Credits:
 
+Music: https://opengameart.org/content/5-chiptunes-action
+
 Player Spaceship model: https://opengameart.org/content/spaceship-4
 
 EnemyStandard model: https://opengameart.org/content/spaceship-tutorial-0
