@@ -1,3 +1,10 @@
+	
+import processing.sound.*;
+SoundFile bulletSound;
+SoundFile deathSound;
+SoundFile healthSound;
+SoundFile powerUpSound;
+
 Player player;
 Ui ui;
 int gameState;
@@ -15,6 +22,7 @@ void setup()
 	size(1600, 900);
 	frameRate(60);
 	reset();
+	soundSetup();
 	gameState = 0;
 }
 
@@ -28,4 +36,12 @@ void draw()
 		EnemyToBulletCollision();
 		ui.draw();
 	}
+}
+
+void soundSetup() 
+{
+	bulletSound = new SoundFile(this, "Assets/Bullet.wav");
+	deathSound = new SoundFile(this, "Assets/Death.wav");
+	healthSound = new SoundFile(this, "Assets/Health.wav");
+	powerUpSound = new SoundFile(this, "Assets/Power Up.wav");
 }
