@@ -1,9 +1,8 @@
 class Player extends ObjectSpawner 
-{
-	public int score;
-	
+{	
 	float time;
 	float oldTime;
+	int score;
 	int timeScore;
 
 	float angle;
